@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عجوة البركة</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f2ed;
+    text-align: center;
+}
+
+header {
+    background: #3e2f1c;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.section {
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+button {
+    background: #c49b63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a67c52;
+}
+
+footer {
+    background: #3e2f1c;
+    color: white;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🌾 عجوة البركة 🍯
+</header>
+
+<div class="section">
+<h2>منتجاتنا</h2>
+
+<div class="product">
+<h3>عجوة المدينة الأصلية</h3>
+<p>تمر فاخر من المدينة المنورة، صحي ولذيذ</p>
+<button onclick="order('عجوة المدينة')">اطلب الآن</button>
+</div>
+
+<div class="product">
+<h3>عسل الحبة السوداء الأصلي</h3>
+<p>عسل طبيعي 100% بفوائد صحية مذهلة</p>
+<button onclick="order('عسل الحبة السوداء')">اطلب الآن</button>
+</div>
+
+<div class="product">
+<h3>ماء زمزم</h3>
+<p>ماء مبارك من مكة المكرمة</p>
+<button onclick="order('ماء زمزم')">اطلب الآن</button>
+</div>
+
+</div>
+
+<footer>
+📞 0699091938
+</footer>
+
+<script>
+function order(product) {
+    let phone = "213699091938";
+    let message = "السلام عليكم، أريد طلب " + product;
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
