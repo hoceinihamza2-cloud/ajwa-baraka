@@ -12,7 +12,6 @@ body {
     background: #fff8f0;
 }
 
-/* HEADER */
 .header {
     background: #8b4513;
     color: white;
@@ -21,7 +20,6 @@ body {
     font-size: 22px;
 }
 
-/* PRODUCT */
 .product {
     max-width: 500px;
     margin: auto;
@@ -40,7 +38,6 @@ body {
     margin: 10px 0;
 }
 
-/* FORM */
 .form {
     background: white;
     padding: 15px;
@@ -57,7 +54,6 @@ input, select {
     border: 1px solid #ccc;
 }
 
-/* BUTTON */
 button {
     width: 100%;
     padding: 12px;
@@ -69,7 +65,6 @@ button {
     font-size: 16px;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -85,34 +80,35 @@ footer {
 </div>
 
 <div class="product">
-    
-    <h2>باقة المدينة المباركة</h2>
-    
-    <img src="https://i.imgur.com/YourAjwaImage.jpg">
 
-    <p>
-    عجوة المدينة + عسل الحبة السوداء + ماء زمزم  
-    منتجات أصلية 100% بجودة عالية
-    </p>
+<h2>باقة المدينة المباركة</h2>
 
-    <div class="price">السعر: 4900 دج</div>
+<img src="https://i.imgur.com/YourAjwaImage.jpg">
 
-    <div class="form">
-        <h3>اطلب الآن</h3>
+<p>
+عجوة المدينة + عسل الحبة السوداء + ماء زمزم  
+منتجات أصلية 100% بجودة عالية
+</p>
 
-        <input type="text" placeholder="الاسم الكامل">
-        <input type="tel" placeholder="📞 رقم الهاتف">
-        <input type="text" placeholder="🏠 العنوان">
+<div class="price">السعر: 4900 دج</div>
 
-        <select>
-            <option>اختر الولاية</option>
-            <option>الجزائر</option>
-            <option>البليدة</option>
-            <option>وهران</option>
-        </select>
+<div class="form">
+<h3>اطلب الآن</h3>
 
-        <button onclick="sendWhatsApp()">تأكيد الطلب</button>
-    </div>
+<input type="text" placeholder="الاسم الكامل">
+<input type="tel" placeholder="📞 رقم الهاتف">
+<input type="text" placeholder="🏠 العنوان">
+
+<select>
+<option>اختر الولاية</option>
+<option>الجزائر</option>
+<option>البليدة</option>
+<option>وهران</option>
+</select>
+
+<button onclick="sendWhatsApp()">تأكيد الطلب</button>
+</div>
+
 </div>
 
 <footer>
