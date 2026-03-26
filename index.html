@@ -4,138 +4,111 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عجوة البركة</title>
-
 <style>
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #fff8f0;
-}
-
-.header {
-    background: #8b4513;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-size: 22px;
-}
-
-.product {
-    max-width: 500px;
-    margin: auto;
-    padding: 15px;
-}
-
-.product img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.price {
-    color: #8b4513;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.form {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background: #25d366;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-size: 16px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #8b4513;
-}
+body { font-family: Arial; background: #fff8f0; margin:0; }
+.header { background:#8b4513; color:white; text-align:center; padding:15px; font-size:22px; }
+.container { max-width:500px; margin:auto; padding:15px; }
+.product { background:white; margin-bottom:15px; padding:10px; border-radius:10px; box-shadow:0 0 5px #ccc; }
+.product img { width:100%; border-radius:10px; }
+.price { color:#8b4513; font-weight:bold; margin:5px 0; }
+select, input { width:100%; padding:10px; margin-top:10px; border-radius:8px; border:1px solid #ccc; }
+button { width:100%; padding:12px; background:#25d366; color:white; border:none; border-radius:10px; margin-top:15px; font-size:16px; cursor:pointer; }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-🌾 عجوة البركة 🍯
+<div class="header">🌾 عجوة البركة 🍯</div>
+
+<div class="container">
+
+<!-- عجوة المدينة -->
+<div class="product">
+<h3>✔️ عجوة المدينة الأصلية</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Ajwa_dates.jpg" alt="عجوة المدينة">
+<p class="price">1500 دج</p>
+<select id="ajwa">
+<option value="0">اختر الكمية</option>
+<option>1</option><option>2</option><option>3</option><option>4</option>
+</select>
 </div>
 
+<!-- عسل الحبة السوداء -->
 <div class="product">
+<h3>✔️ عسل الحبة السوداء الطبيعي</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Honey.jpg" alt="عسل الحبة السوداء">
+<p class="price">2000 دج</p>
+<select id="honey">
+<option value="0">اختر الكمية</option>
+<option>1</option><option>2</option><option>3</option><option>4</option>
+</select>
+</div>
 
-<h2 style="text-align:center;">✨ باقة المدينة المباركة ✨</h2>
+<!-- ماء زمزم -->
+<div class="product">
+<h3>✔️ ماء زمزم المبارك</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Water_bottle.jpg" alt="ماء زمزم">
+<p class="price">1400 دج</p>
+<select id="zamzam">
+<option value="0">اختر الكمية</option>
+<option>1</option><option>2</option><option>3</option><option>4</option>
+</select>
+</div>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Ajwa_dates.jpg">
+<!-- بيانات الزبون -->
+<input type="text" id="name" placeholder="الاسم الكامل">
+<input type="tel" id="phone" placeholder="📞 رقم الهاتف">
 
-<p>
-<p>
-✔️ عجوة المدينة الأصلية<br>
-✔️ عسل الحبة السوداء الطبيعي<br>
-✔️ ماء زمزم المبارك
-</p>
-
-<div class="price">السعر: 4900 دج</div>
-منتجات أصلية 100% بجودة عالية
-</p>
-
-<div class="price">السعر: 4900 دج</div>
-
-<div class="form">
-<h3>اطلب الآن</h3>
-
-<input type="text" placeholder="الاسم الكامل">
-<input type="tel" placeholder="📞 رقم الهاتف">
-<input type="text" placeholder="🏠 العنوان">
-
-<select>
+<select id="state">
 <option>اختر الولاية</option>
-<option>اختر الولاية</option>
-<option>01 - أدرار</option>
-<option>02 - الشلف</option>
-<option>03 - الأغواط</option>
-<option>04 - أم البواقي</option>
-<option>05 - باتنة</option>
-<option>06 - بجاية</option>
-<option>07 - بسكرة</option>
-<option>08 - بشار</option>
-<option>09 - البليدة</option>
-<option>10 - البويرة</option>
-<option>16 - الجزائر</option>
-<option>31 - وهران</option>
-<option>... باقي الولايات</option>
+<option>01 - أدرار</option><option>02 - الشلف</option><option>03 - الأغواط</option>
+<option>04 - أم البواقي</option><option>05 - باتنة</option><option>06 - بجاية</option>
+<option>07 - بسكرة</option><option>08 - بشار</option><option>09 - البليدة</option>
+<option>10 - البويرة</option><option>11 - تمنراست</option><option>12 - تبسة</option>
+<option>13 - تلمسان</option><option>14 - تيارت</option><option>15 - تيزي وزو</option>
+<option>16 - الجزائر</option><option>17 - الجلفة</option><option>18 - جيجل</option>
+<option>19 - سطيف</option><option>20 - سعيدة</option><option>21 - سكيكدة</option>
+<option>22 - سيدي بلعباس</option><option>23 - عنابة</option><option>24 - قالمة</option>
+<option>25 - قسنطينة</option><option>26 - المدية</option><option>27 - مستغانم</option>
+<option>28 - المسيلة</option><option>29 - معسكر</option><option>30 - ورقلة</option>
+<option>31 - وهران</option><option>32 - البيض</option><option>33 - إليزي</option>
+<option>34 - برج بوعريريج</option><option>35 - بومرداس</option><option>36 - الطارف</option>
+<option>37 - تندوف</option><option>38 - تيسمسيلت</option><option>39 - الوادي</option>
+<option>40 - خنشلة</option><option>41 - سوق أهراس</option><option>42 - تيبازة</option>
+<option>43 - ميلة</option><option>44 - عين الدفلى</option><option>45 - النعامة</option>
+<option>46 - عين تموشنت</option><option>47 - غرداية</option><option>48 - غليزان</option>
+<option>49 - الجزائر الجديدة</option><option>50 - برج باجي مختار</option><option>51 - أولاد جلال</option>
+<option>52 - بني عباس</option><option>53 - عين صالح</option><option>54 - عين قزام</option>
+<option>55 - توقرت</option><option>56 - جانت</option><option>57 - المغير</option>
+<option>58 - المنيعة</option>
+<!-- 10 ولايات إضافية يمكن إضافتها يدويا -->
 </select>
 
-<button onclick="sendWhatsApp()">تأكيد الطلب</button>
-</div>
+<button onclick="sendOrder()">اطلب الآن عبر واتساب</button>
 
 </div>
-
-<footer>
-📞 0699091938
-</footer>
 
 <script>
-function sendWhatsApp(){
-    var url = "https://wa.me/213699091938?text=السلام عليكم، أريد طلب باقة المدينة المباركة";
-    window.open(url, '_blank');
+function sendOrder(){
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let state = document.getElementById("state").value;
+    let ajwa = document.getElementById("ajwa").value;
+    let honey = document.getElementById("honey").value;
+    let zamzam = document.getElementById("zamzam").value;
+
+    if(!name || !phone || state=="اختر الولاية") {
+        alert("يرجى تعبئة جميع البيانات!");
+        return;
+    }
+
+    let message = "طلب جديد:\n";
+    if(ajwa>0) message += "عجوة المدينة: "+ajwa+"\n";
+    if(honey>0) message += "عسل الحبة السوداء: "+honey+"\n";
+    if(zamzam>0) message += "ماء زمزم: "+zamzam+"\n";
+    message += "الاسم: "+name+"\nالهاتف: "+phone+"\nالولاية: "+state;
+
+    let url = "https://wa.me/213699091938?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
 }
 </script>
 
