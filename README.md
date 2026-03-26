@@ -90,7 +90,7 @@ footer {
 منتجات أصلية 100% بجودة عالية
 </p>
 
-<div class="price">السعر: 4900 دج</div>
+<div class="price">السعر: 4500 دج</div>
 
 <div class="form">
 <h3>اطلب الآن</h3>
