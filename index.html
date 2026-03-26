@@ -24,7 +24,7 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 <!-- عجوة المدينة -->
 <div class="product">
 <h3>✔️ عجوة المدينة الأصلية</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Ajwa_dates.jpg" alt="عجوة المدينة">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Ajwa_dates.jpg">
 <p class="price">4000 دج</p>
 <select id="ajwa">
 <option value="0">اختر الكمية</option>
@@ -32,10 +32,10 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 </select>
 </div>
 
-<!-- عسل الحبة السوداء -->
+<!-- عسل -->
 <div class="product">
 <h3>✔️ عسل الحبة السوداء الطبيعي</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Honey.jpg" alt="عسل الحبة السوداء">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Honey.jpg">
 <p class="price">4500 دج</p>
 <select id="honey">
 <option value="0">اختر الكمية</option>
@@ -43,10 +43,10 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 </select>
 </div>
 
-<!-- ماء زمزم -->
+<!-- زمزم -->
 <div class="product">
 <h3>✔️ ماء زمزم المبارك</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Water_bottle.jpg" alt="ماء زمزم">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Water_bottle.jpg">
 <p class="price">4500 دج</p>
 <select id="zamzam">
 <option value="0">اختر الكمية</option>
@@ -54,58 +54,85 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 </select>
 </div>
 
-<!-- بيانات الزبون -->
+<!-- بيانات -->
 <input type="text" id="name" placeholder="الاسم الكامل">
 <input type="tel" id="phone" placeholder="📞 رقم الهاتف">
 
-<select id="state">
-<option>اختر الولاية</option>
-<option>01 - أدرار</option><option>02 - الشلف</option><option>03 - الأغواط</option>
-<option>04 - أم البواقي</option><option>05 - باتنة</option><option>06 - بجاية</option>
-<option>07 - بسكرة</option><option>08 - بشار</option><option>09 - البليدة</option>
-<option>10 - البويرة</option><option>11 - تمنراست</option><option>12 - تبسة</option>
-<option>13 - تلمسان</option><option>14 - تيارت</option><option>15 - تيزي وزو</option>
-<option>16 - الجزائر</option><option>17 - الجلفة</option><option>18 - جيجل</option>
-<option>19 - سطيف</option><option>20 - سعيدة</option><option>21 - سكيكدة</option>
-<option>22 - سيدي بلعباس</option><option>23 - عنابة</option><option>24 - قالمة</option>
-<option>25 - قسنطينة</option><option>26 - المدية</option><option>27 - مستغانم</option>
-<option>28 - المسيلة</option><option>29 - معسكر</option><option>30 - ورقلة</option>
-<option>31 - وهران</option><option>32 - البيض</option><option>33 - إليزي</option>
-<option>34 - برج بوعريريج</option><option>35 - بومرداس</option><option>36 - الطارف</option>
-<option>37 - تندوف</option><option>38 - تيسمسيلت</option><option>39 - الوادي</option>
-<option>40 - خنشلة</option><option>41 - سوق أهراس</option><option>42 - تيبازة</option>
-<option>43 - ميلة</option><option>44 - عين الدفلى</option><option>45 - النعامة</option>
-<option>46 - عين تموشنت</option><option>47 - غرداية</option><option>48 - غليزان</option>
-<option>49 - الجزائر الجديدة</option><option>50 - برج باجي مختار</option><option>51 - أولاد جلال</option>
-<option>52 - بني عباس</option><option>53 - عين صالح</option><option>54 - عين قزام</option>
-<option>55 - توقرت</option><option>56 - جانت</option><option>57 - المغير</option>
-<option>58 - المنيعة</option>
-<!-- 10 ولايات إضافية يمكن إضافتها يدويا -->
-</select>
+<!-- 🚚 التوصيل الجديد -->
+<div class="product">
+  <h3>🚚 معلومات التوصيل</h3>
+
+  <select id="wilaya" onchange="updatePrice()">
+    <option value="">اختر الولاية</option>
+    <option value="Adrar">01 - أدرار</option>
+    <option value="Chlef">02 - الشلف</option>
+    <option value="Laghouat">03 - الأغواط</option>
+    <option value="Blida">09 - البليدة</option>
+    <option value="Alger">16 - الجزائر</option>
+    <option value="Oran">31 - وهران</option>
+  </select>
+
+  <select id="deliveryType" onchange="updatePrice()">
+    <option value="">نوع التوصيل</option>
+    <option value="home">توصيل للمنزل</option>
+    <option value="desk">توصيل لمكتب التوصيل</option>
+  </select>
+
+  <div id="deliveryPrice" style="margin-top:10px; font-weight:bold;"></div>
+</div>
 
 <button onclick="sendOrder()">اطلب الآن عبر واتساب</button>
 
 </div>
 
 <script>
+// الأسعار
+const prices = {
+  Adrar: { home: 1400, desk: 1100 },
+  Chlef: { home: 850, desk: 450 },
+  Laghouat: { home: 1000, desk: 700 },
+  Blida: { home: 500, desk: 400 },
+  Alger: { home: 700, desk: 400 },
+  Oran: { home: 850, desk: 450 }
+};
+
+// حساب السعر
+function updatePrice() {
+  let wilaya = document.getElementById("wilaya").value;
+  let type = document.getElementById("deliveryType").value;
+  let result = document.getElementById("deliveryPrice");
+
+  if (wilaya && type) {
+    let price = prices[wilaya][type];
+    result.innerHTML = "سعر التوصيل: " + price + " دج";
+  } else {
+    result.innerHTML = "";
+  }
+}
+
+// إرسال الطلب
 function sendOrder(){
     let name = document.getElementById("name").value.trim();
     let phone = document.getElementById("phone").value.trim();
-    let state = document.getElementById("state").value;
+    let wilaya = document.getElementById("wilaya").value;
+    let type = document.getElementById("deliveryType").value;
     let ajwa = document.getElementById("ajwa").value;
     let honey = document.getElementById("honey").value;
     let zamzam = document.getElementById("zamzam").value;
 
-    if(!name || !phone || state=="اختر الولاية") {
+    if(!name || !phone || !wilaya || !type) {
         alert("يرجى تعبئة جميع البيانات!");
         return;
     }
 
     let message = "طلب جديد:\n";
-    if(ajwa>0) message += "عجوة المدينة: "+ajwa+"\n";
-    if(honey>0) message += "عسل الحبة السوداء: "+honey+"\n";
-    if(zamzam>0) message += "ماء زمزم: "+zamzam+"\n";
-    message += "الاسم: "+name+"\nالهاتف: "+phone+"\nالولاية: "+state;
+    if(ajwa>0) message += "عجوة: "+ajwa+"\n";
+    if(honey>0) message += "عسل: "+honey+"\n";
+    if(zamzam>0) message += "زمزم: "+zamzam+"\n";
+
+    message += "الاسم: "+name+"\nالهاتف: "+phone;
+    message += "\nالولاية: "+wilaya;
+    message += "\nنوع التوصيل: " + (type=="home" ? "منزل" : "مكتب");
 
     let url = "https://wa.me/213699091938?text=" + encodeURIComponent(message);
     window.open(url, "_blank");
