@@ -101,9 +101,7 @@ footer {
 
 <select>
 <option>اختر الولاية</option>
-<option>الجزائر</option>
-<option>البليدة</option>
-<option>وهران</option>
+<optin التوصيل متوفر كامل الولايات</option>
 </select>
 
 <button onclick="sendWhatsApp()">تأكيد الطلب</button>
