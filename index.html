@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌾 عجوة البركة 🍯</title>
+<title>عجوة البركة</title>
 <style>
 body { font-family: Arial; background: #fff8f0; margin:0; }
 .header { background:#8b4513; color:white; text-align:center; padding:15px; font-size:22px; }
@@ -13,6 +13,11 @@ body { font-family: Arial; background: #fff8f0; margin:0; }
 .price { color:#8b4513; font-weight:bold; margin:5px 0; }
 select, input { width:100%; padding:10px; margin-top:10px; border-radius:8px; border:1px solid #ccc; }
 button { width:100%; padding:12px; background:#25d366; color:white; border:none; border-radius:10px; margin-top:15px; font-size:16px; cursor:pointer; }
+
+/* سلايدر الصور */
+.slider { position: relative; width: 100%; height: 200px; overflow: hidden; border-radius:10px; margin-bottom:15px; }
+.slides { display: flex; width: 300%; transition: transform 0.5s ease-in-out; }
+.slides img { width: 100%; flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -21,36 +26,40 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 
 <div class="container">
 
-<!-- عجوة المدينة -->
+<!-- سلايدر الصور -->
+<div class="slider">
+  <div class="slides" id="slides">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Ajwa_dates.jpg" alt="عجوة المدينة">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Honey.jpg" alt="عسل الحبة السوداء">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Water_bottle.jpg" alt="ماء زمزم">
+  </div>
+</div>
+
+<!-- المنتجات -->
 <div class="product">
 <h3>✔️ عجوة المدينة الأصلية</h3>
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Ajwa_dates.jpg" alt="عجوة المدينة">
 <p class="price">4000 دج</p>
 <select id="ajwa">
-<option value="0">اختر الكمية</option>
-<option>1</option><option>2</option><option>3</option><option>4</option>
+<option value="0">اختر الكمية</option><option>1</option><option>2</option><option>3</option><option>4</option>
 </select>
 </div>
 
-<!-- عسل الحبة السوداء -->
 <div class="product">
 <h3>✔️ عسل الحبة السوداء الطبيعي</h3>
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Honey.jpg" alt="عسل الحبة السوداء">
 <p class="price">4500 دج</p>
 <select id="honey">
-<option value="0">اختر الكمية</option>
-<option>1</option><option>2</option><option>3</option><option>4</option>
+<option value="0">اختر الكمية</option><option>1</option><option>2</option><option>3</option><option>4</option>
 </select>
 </div>
 
-<!-- ماء زمزم -->
 <div class="product">
 <h3>✔️ ماء زمزم المبارك</h3>
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Water_bottle.jpg" alt="ماء زمزم">
 <p class="price">4500 دج</p>
 <select id="zamzam">
-<option value="0">اختر الكمية</option>
-<option>1</option><option>2</option><option>3</option><option>4</option>
+<option value="0">اختر الكمية</option><option>1</option><option>2</option><option>3</option><option>4</option>
 </select>
 </div>
 
@@ -58,70 +67,69 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 <input type="text" id="name" placeholder="الاسم الكامل">
 <input type="tel" id="phone" placeholder="📞 رقم الهاتف">
 
-<!-- Dropdown للولاية وطريقة التوصيل -->
+<!-- معلومات التوصيل -->
 <div class="product">
 <h3>🚚 معلومات التوصيل</h3>
 <select id="wilaya" onchange="updatePrice()">
 <option value="">اختر الولاية</option>
-<!-- الولايات الـ58 -->
 <option value="Adrar">01 - أدرار</option>
 <option value="Chlef">02 - الشلف</option>
 <option value="Laghouat">03 - الأغواط</option>
-<option value="OumElBouaghi">04 - أم البواقي</option>
+<option value="Oum El Bouaghi">04 - أم البواقي</option>
 <option value="Batna">05 - باتنة</option>
-<option value="Bejaia">06 - بجاية</option>
+<option value="Béjaïa">06 - بجاية</option>
 <option value="Biskra">07 - بسكرة</option>
-<option value="Bechar">08 - بشار</option>
+<option value="Béchar">08 - بشار</option>
 <option value="Blida">09 - البليدة</option>
 <option value="Bouira">10 - البويرة</option>
 <option value="Tamanrasset">11 - تمنراست</option>
-<option value="Tebessa">12 - تبسة</option>
+<option value="Tébessa">12 - تبسة</option>
 <option value="Tlemcen">13 - تلمسان</option>
 <option value="Tiaret">14 - تيارت</option>
-<option value="TiziOuzou">15 - تيزي وزو</option>
+<option value="Tizi Ouzou">15 - تيزي وزو</option>
 <option value="Alger">16 - الجزائر</option>
 <option value="Djelfa">17 - الجلفة</option>
 <option value="Jijel">18 - جيجل</option>
-<option value="Setif">19 - سطيف</option>
-<option value="Saida">20 - سعيدة</option>
+<option value="Sétif">19 - سطيف</option>
+<option value="Saïda">20 - سعيدة</option>
 <option value="Skikda">21 - سكيكدة</option>
-<option value="SidiBelAbbes">22 - سيدي بلعباس</option>
+<option value="Sidi Bel Abbès">22 - سيدي بلعباس</option>
 <option value="Annaba">23 - عنابة</option>
 <option value="Guelma">24 - قالمة</option>
 <option value="Constantine">25 - قسنطينة</option>
-<option value="Medea">26 - المدية</option>
+<option value="Médéa">26 - المدية</option>
 <option value="Mostaganem">27 - مستغانم</option>
-<option value="MSila">28 - المسيلة</option>
+<option value="M'Sila">28 - المسيلة</option>
 <option value="Mascara">29 - معسكر</option>
 <option value="Ouargla">30 - ورقلة</option>
 <option value="Oran">31 - وهران</option>
-<option value="ElBayadh">32 - البيض</option>
+<option value="El Bayadh">32 - البيض</option>
 <option value="Illizi">33 - إليزي</option>
-<option value="BordjBouArreridj">34 - برج بوعريريج</option>
-<option value="Boumerdes">35 - بومرداس</option>
-<option value="ElTarf">36 - الطارف</option>
+<option value="Bordj Bou Arreridj">34 - برج بوعريريج</option>
+<option value="Boumerdès">35 - بومرداس</option>
+<option value="El Tarf">36 - الطارف</option>
 <option value="Tindouf">37 - تندوف</option>
 <option value="Tissemsilt">38 - تيسمسيلت</option>
-<option value="ElOued">39 - الوادي</option>
+<option value="El Oued">39 - الوادي</option>
 <option value="Khenchela">40 - خنشلة</option>
-<option value="SoukAhras">41 - سوق أهراس</option>
+<option value="Souk Ahras">41 - سوق أهراس</option>
 <option value="Tipaza">42 - تيبازة</option>
 <option value="Mila">43 - ميلة</option>
-<option value="AinDefla">44 - عين الدفلى</option>
-<option value="Naama">45 - النعامة</option>
-<option value="AinTemouchent">46 - عين تموشنت</option>
-<option value="Ghardaia">47 - غرداية</option>
+<option value="Aïn Defla">44 - عين الدفلى</option>
+<option value="Naâma">45 - النعامة</option>
+<option value="Aïn Témouchent">46 - عين تموشنت</option>
+<option value="Ghardaïa">47 - غرداية</option>
 <option value="Relizane">48 - غليزان</option>
 <option value="Timimoun">49 - تيميمون</option>
-<option value="OuledDjellal">50 - أولاد جلال</option>
-<option value="BeniAbbes">51 - بني عباس</option>
-<option value="InSalah">52 - عين صالح</option>
-<option value="InGuezzam">53 - عين قزام</option>
+<option value="Ouled Djellal">50 - أولاد جلال</option>
+<option value="Beni Abbes">51 - بني عباس</option>
+<option value="In Salah">52 - عين صالح</option>
+<option value="In Guezzam">53 - عين قزام</option>
 <option value="Touggourt">54 - توقرت</option>
 <option value="Djanet">55 - جانت</option>
-<option value="ElMGhair">56 - المغير</option>
-<option value="ElMeniaa">57 - المنيعة</option>
-<option value="BordjTlemcen">58 - برج تلمسان</option>
+<option value="El M'Ghair">56 - المغير</option>
+<option value="El Meniaa">57 - المنيعة</option>
+<option value="Bordj T’lemcen">58 - برج تلمسان</option>
 </select>
 
 <select id="deliveryType" onchange="updatePrice()">
@@ -138,60 +146,71 @@ button { width:100%; padding:12px; background:#25d366; color:white; border:none;
 </div>
 
 <script>
-// أسعار التوصيل لكل ولاية
+// سلايدر تلقائي
+let current = 0;
+function showSlide(index){
+  const slides = document.getElementById("slides");
+  slides.style.transform = "translateX(-" + (index*100) + "%)";
+}
+setInterval(function(){
+  current = (current+1)%3;
+  showSlide(current);
+},3000);
+
+// أسعار التوصيل لكل 58 ولاية
 const prices = {
-Adrar:{home:1400,desk:1100},Chlef:{home:850,desk:450},Laghouat:{home:1000,desk:700},
-OumElBouaghi:{home:850,desk:500},Batna:{home:850,desk:500},Bejaia:{home:850,desk:500},
-Biskra:{home:950,desk:600},Bechar:{home:1400,desk:1100},Blida:{home:500,desk:400},
-Bouira:{home:850,desk:450},Tamanrasset:{home:1800,desk:1400},Tebessa:{home:950,desk:600},
-Tlemcen:{home:850,desk:500},Tiaret:{home:850,desk:500},TiziOuzou:{home:850,desk:450},
-Alger:{home:700,desk:400},Djelfa:{home:900,desk:600},Jijel:{home:850,desk:500},
-Setif:{home:850,desk:450},Saida:{home:900,desk:600},Skikda:{home:850,desk:500},
-SidiBelAbbes:{home:850,desk:500},Annaba:{home:850,desk:500},Guelma:{home:900,desk:600},
-Constantine:{home:850,desk:450},Medea:{home:850,desk:450},Mostaganem:{home:850,desk:500},
-MSila:{home:850,desk:500},Mascara:{home:900,desk:600},Ouargla:{home:1100,desk:800},
-Oran:{home:850,desk:450},ElBayadh:{home:1100,desk:800},Illizi:{home:2000,desk:1700},
-BordjBouArreridj:{home:850,desk:450},Boumerdes:{home:850,desk:450},ElTarf:{home:950,desk:600},
-Tindouf:{home:1800,desk:1400},Tissemsilt:{home:850,desk:500},ElOued:{home:1100,desk:800},
-Khenchela:{home:900,desk:600},SoukAhras:{home:900,desk:600},Tipaza:{home:700,desk:400},
-Mila:{home:850,desk:500},AinDefla:{home:850,desk:450},Naama:{home:1100,desk:800},
-AinTemouchent:{home:900,desk:600},Ghardaia:{home:1100,desk:800},Relizane:{home:850,desk:500},
-Timimoun:{home:1400,desk:1100},OuledDjellal:{home:1000,desk:700},BeniAbbes:{home:1400,desk:1100},
-InSalah:{home:1400,desk:1100},InGuezzam:{home:2000,desk:1700},Touggourt:{home:1100,desk:800},
-Djanet:{home:2000,desk:1700},ElMGhair:{home:1100,desk:800},ElMeniaa:{home:1300,desk:1000},
-BordjTlemcen:{home:900,desk:600}
+  Adrar:{home:1400,desk:1100},Chlef:{home:850,desk:450},Laghouat:{home:1000,desk:700},Oum El Bouaghi:{home:850,desk:500},
+  Batna:{home:850,desk:500},Béjaïa:{home:850,desk:500},Biskra:{home:950,desk:600},Béchar:{home:1400,desk:1100},
+  Blida:{home:500,desk:400},Bouira:{home:850,desk:450},Tamanrasset:{home:1800,desk:1400},Tébessa:{home:950,desk:600},
+  Tlemcen:{home:850,desk:500},Tiaret:{home:850,desk:500},Tizi Ouzou:{home:850,desk:450},Alger:{home:700,desk:400},
+  Djelfa:{home:900,desk:600},Jijel:{home:850,desk:500},Sétif:{home:850,desk:450},Saïda:{home:900,desk:600},
+  Skikda:{home:850,desk:500},Sidi Bel Abbès:{home:850,desk:500},Annaba:{home:850,desk:500},Guelma:{home:900,desk:600},
+  Constantine:{home:850,desk:450},Médéa:{home:850,desk:450},Mostaganem:{home:850,desk:500},M'Sila:{home:850,desk:500},
+  Mascara:{home:900,desk:600},Ouargla:{home:1100,desk:800},Oran:{home:850,desk:450},El Bayadh:{home:1100,desk:800},
+  Illizi:{home:2000,desk:1700},Bordj Bou Arreridj:{home:850,desk:450},Boumerdès:{home:850,desk:450},El Tarf:{home:950,desk:600},
+  Tindouf:{home:1800,desk:1400},Tissemsilt:{home:850,desk:500},El Oued:{home:1100,desk:800},Khenchela:{home:900,desk:600},
+  Souk Ahras:{home:900,desk:600},Tipaza:{home:700,desk:400},Mila:{home:850,desk:500},Aïn Defla:{home:850,desk:450},
+  Naâma:{home:1100,desk:800},Aïn Témouchent:{home:900,desk:600},Ghardaïa:{home:1100,desk:800},Relizane:{home:850,desk:500},
+  Timimoun:{home:1400,desk:1100},Ouled Djellal:{home:1000,desk:700},Beni Abbes:{home:1400,desk:1100},In Salah:{home:1400,desk:1100},
+  In Guezzam:{home:2000,desk:1700},Touggourt:{home:1100,desk:800},Djanet:{home:2000,desk:1700},El M'Ghair:{home:1100,desk:800},
+  El Meniaa:{home:1300,desk:1000},Bordj T’lemcen:{home:900,desk:600}
 };
 
-// عرض سعر التوصيل حسب الولاية وطريقة التوصيل
-function updatePrice(){
-let wilaya = document.getElementById("wilaya").value;
-let type = document.getElementById("deliveryType").value;
-let result = document.getElementById("deliveryPrice");
-if(wilaya && type){ result.innerHTML = "سعر التوصيل: "+prices[wilaya][type]+" دج"; }
-else{ result.innerHTML = ""; }
+function updatePrice() {
+  let wilaya = document.getElementById("wilaya").value;
+  let type = document.getElementById("deliveryType").value;
+  let result = document.getElementById("deliveryPrice");
+
+  if (wilaya && type) {
+    let price = prices[wilaya][type];
+    result.innerHTML = "سعر التوصيل: " + price + " دج";
+  } else {
+    result.innerHTML = "";
+  }
 }
 
-// ارسال الطلب لواتساب
 function sendOrder(){
-let name=document.getElementById("name").value.trim();
-let phone=document.getElementById("phone").value.trim();
-let wilaya=document.getElementById("wilaya").value;
-let delivery=document.getElementById("deliveryType").value;
-let ajwa=document.getElementById("ajwa").value;
-let honey=document.getElementById("honey").value;
-let zamzam=document.getElementById("zamzam").value;
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let wilaya = document.getElementById("wilaya").value;
+    let delivery = document.getElementById("deliveryType").value;
+    let ajwa = document.getElementById("ajwa").value;
+    let honey = document.getElementById("honey").value;
+    let zamzam = document.getElementById("zamzam").value;
 
-if(!name || !phone || !wilaya || !delivery){ alert("يرجى تعبئة جميع البيانات!"); return; }
+    if(!name || !phone || !wilaya || !delivery) {
+        alert("يرجى تعبئة جميع البيانات!");
+        return;
+    }
 
-let message="طلب جديد:\n";
-if(ajwa>0) message+="عجوة المدينة: "+ajwa+"\n";
-if(honey>0) message+="عسل الحبة السوداء: "+honey+"\n";
-if(zamzam>0) message+="ماء زمزم: "+zamzam+"\n";
-message+="الاسم: "+name+"\nالهاتف: "+phone+"\nالولاية: "+wilaya+"\nنوع التوصيل: "+(delivery=="home"?"للمنزل":"لمكتب التوصيل")+"\n";
-message+="سعر التوصيل: "+prices[wilaya][delivery]+" دج";
+    let message = "طلب جديد:\n";
+    if(ajwa>0) message += "عجوة المدينة: "+ajwa+"\n";
+    if(honey>0) message += "عسل الحبة السوداء: "+honey+"\n";
+    if(zamzam>0) message += "ماء زمزم: "+zamzam+"\n";
+    message += "الاسم: "+name+"\nالهاتف: "+phone+"\nالولاية: "+wilaya+"\nنوع التوصيل: "+(delivery=="home"?"توصيل للمنزل":"توصيل لمكتب التوصيل");
 
-let url="https://wa.me/213699091938?text="+encodeURIComponent(message);
-window.open(url,"_blank");
+    let url = "https://wa.me/213699091938?text=" + encodeURIComponent(message);
+    window.open(url,"_blank");
 }
 </script>
 
