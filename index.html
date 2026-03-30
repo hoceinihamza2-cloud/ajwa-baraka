@@ -1,164 +1,146 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عجوة البركة</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #fffaf3;
-    margin: 0;
-    padding: 0;
-  }
-  .header {
-    background:#8b4513;
-    color:white;
-    text-align:center;
-    padding:20px;
-    font-size:24px;
-    font-weight:bold;
-  }
-  .container {
-    max-width:600px;
-    margin:auto;
-    padding:20px;
-  }
-  .product {
-    background:white;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    margin-bottom:25px;
-    padding:15px;
-    text-align:center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .product:hover {
-    transform: translateY(-5px);
-    box-shadow:0 15px 25px rgba(0,0,0,0.2);
-  }
-  .product img {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius:15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .product img:hover {
-    transform: scale(1.05);
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  }
-  h3 {
-    margin: 15px 0 10px;
-    color:#8b4513;
-  }
-  p, .price {
-    margin: 5px 0;
-    color: #333;
-  }
-  .price {
-    font-weight:bold;
-    font-size:18px;
-    color:#d2691e;
-  }
-  select, input {
-    width:100%;
-    padding:10px;
-    margin-top:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:16px;
-  }
-  button {
-    width:100%;
-    padding:12px;
-    background:#25d366;
-    color:white;
-    border:none;
-    border-radius:10px;
-    margin-top:15px;
-    font-size:16px;
-    cursor:pointer;
-    transition: background 0.3s ease;
-  }
-  button:hover {
-    background:#1ebe5d;
-  }
+/* ====== BODY ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ====== HERO ====== */
+.hero {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+/* ====== PRODUCT CARD ====== */
+.product {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product h3 {
+  margin: 12px 0 6px;
+  font-size: 20px;
+}
+
+.product .price {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ====== INPUT & BUTTON ====== */
+input[type=number] {
+  width: 70px;
+  padding: 6px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #333;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+}
 </style>
-</head>
-<body>
-<div class="header">عجوة البركة</div>
+
+<header>🌾 عجوة البركة</header>
+
+<div class="hero">
+  <h1>منتجات طبيعية أصلية</h1>
+  <p>عجوة المدينة - عسل الحبة السوداء - ماء زمزم</p>
+</div>
+
 <div class="container">
 
-  <!-- منتج 1 -->
   <div class="product">
-    <img src="https://i.ibb.co/TMS9fx2m/file-00000000652471f5a5c33729899eabc0.png" alt="عجوة المدينة">
-    <h3>✔️ عجوة المدينة الأصلية</h3>
-    <p>🌾 تمور المدينة الأصيلة – طعم طبيعي وفوائد لا تحصى!</p>
+    <img src="https://via.placeholder.com/300">
+    <h3>عجوة المدينة</h3>
     <p class="price">4000 دج</p>
-    <select id="ajwa">
-      <option value="0">اختر الكمية</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </select>
+    <!-- حقل الكمية موجود عندك مسبقاً -->
   </div>
 
-  <!-- منتج 2 -->
   <div class="product">
-    <img src="https://i.ibb.co/xSJW712P/20260327-230155.jpg" alt="عسل الحبة السوداء">
-    <h3>✔️ عسل الحبة السوداء الطبيعي</h3>
-    <p>🍯 عسل طبيعي 100% غني بالفوائد الصحية والمناعة 💪</p>
+    <img src="https://via.placeholder.com/300">
+    <h3>عسل الحبة السوداء</h3>
     <p class="price">4500 دج</p>
-    <select id="honey">
-      <option value="0">اختر الكمية</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </select>
+    <!-- حقل الكمية موجود عندك مسبقاً -->
   </div>
 
-  <!-- منتج 3 -->
   <div class="product">
-    <img src="https://i.ibb.co/39PvqdQd/20260310-165800.jpg" alt="ماء زمزم">
-    <h3>✔️ ماء زمزم المبارك</h3>
-    <p>💧 ماء زمزم المبارك – نقاء وطهارة من مكة المكرمة.</p>
+    <img src="https://via.placeholder.com/300">
+    <h3>ماء زمزم</h3>
     <p class="price">4500 دج</p>
-    <select id="zamzam">
-      <option value="0">اختر الكمية</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </select>
+    <!-- حقل الكمية موجود عندك مسبقاً -->
   </div>
-
-  <div style="text-align:center; margin:20px 0;">
-  <hr style="border:none; height:1px; background:#ddd; margin-bottom:10px;">
-  <p style="color:#8b4513; font-weight:bold;">🛒 اختر منتجاتك ثم أكمل معلومات الطلب في الأسفل</p>
-</div>
 
 </div>
 
-<script>
-function sendOrder(){
-  let ajwa=document.getElementById("ajwa").value;
-  let honey=document.getElementById("honey").value;
-  let zamzam=document.getElementById("zamzam").value;
-  let message="طلب جديد:\n";
-  if(ajwa>0) message+="عجوة المدينة: "+ajwa+"\n";
-  if(honey>0) message+="عسل الحبة السوداء: "+honey+"\n";
-  if(zamzam>0) message+="ماء زمزم: "+zamzam+"\n";
-  window.open("https://wa.me/213699091938?text="+encodeURIComponent(message), "_blank");
-}
-</script>
-
-</body>
-</html>
+<footer>© 2026 جميع الحقوق محفوظة - عجوة البركة</footer>
 
 </div>
 
