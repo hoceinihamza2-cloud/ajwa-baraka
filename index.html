@@ -128,58 +128,15 @@ footer {
 </div>
 
 <div class="container">
-
-  <!-- منتج 1 -->
-  <div class="product">
-    <img src="https://hoceinihamza2-cloud.github.io/ajwa-baraka/images/ajwa.jpg" alt="عجوة المدينة">
-    <h3>عجوة المدينة</h3>
-    <p class="price">4000 دج</p>
-    <input type="number" id="ajwa" min="0" placeholder="الكمية">
-  </div>
-
-  <!-- منتج 2 -->
-  <div class="product">
-    <img src="https://hoceinihamza2-cloud.github.io/ajwa-baraka/images/honey.jpg" alt="عسل الحبة السوداء">
-    <h3>عسل الحبة السوداء</h3>
-    <p class="price">4500 دج</p>
-    <input type="number" id="honey" min="0" placeholder="الكمية">
-  </div>
-
-  <!-- منتج 3 -->
-  <div class="product">
-    <img src="https://hoceinihamza2-cloud.github.io/ajwa-baraka/images/zamzam.jpg" alt="ماء زمزم">
-    <h3>ماء زمزم</h3>
-    <p class="price">4500 دج</p>
-    <input type="number" id="zamzam" min="0" placeholder="الكمية">
-  </div>
-
-</div>
-
-<div style="text-align:center; margin:20px;">
-  <button onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
-</div>
-
-<script>
-function sendOrder(){
-  let ajwa = document.getElementById("ajwa").value;
-  let honey = document.getElementById("honey").value;
-  let zamzam = document.getElementById("zamzam").value;
-  let message = "طلب جديد:\n";
-  if(ajwa>0) message += "عجوة المدينة: "+ajwa+"\n";
-  if(honey>0) message += "عسل الحبة السوداء: "+honey+"\n";
-  if(zamzam>0) message += "ماء زمزم: "+zamzam+"\n";
-  if(ajwa>0 || honey>0 || zamzam>0){
-    window.open("https://wa.me/213699091938?text="+encodeURIComponent(message), "_blank");
-  } else {
-    alert("رجاء اختر كمية على الأقل لمنتج واحد");
-  }
-}
-</script>
-
-<footer>© 2026 جميع الحقوق محفوظة - عجوة البركة</footer>
-
-</body>
+<!-- منتج 1 -->   <div class="product">     <img src="https://i.ibb.co/TMS9fx2m/file-00000000652471f5a5c33729899eabc0.png" alt="عجوة المدينة">     <h3>✔️ عجوة المدينة الأصلية</h3>     <p>🌾 تمور المدينة الأصيلة – طعم طبيعي وفوائد لا تحصى!</p>     <p class="price">4000 دج</p>     <select id="ajwa">       <option value="0">اختر الكمية</option>       <option>1</option>       <option>2</option>       <option>3</option>       <option>4</option>     </select>   </div> 
+  <!-- منتج 2 -->   <div class="product">     <img src="https://i.ibb.co/xSJW712P/20260327-230155.jpg" alt="عسل الحبة السوداء">     <h3>✔️ عسل الحبة السوداء الطبيعي</h3>     <p>🍯 عسل طبيعي 100% غني بالفوائد الصحية والمناعة 💪</p>     <p class="price">4500 دج</p>     <select id="honey">       <option value="0">اختر الكمية</option>       <option>1</option>       <option>2</option>       <option>3</option>       <option>4</option>     </select>   </div> 
+  <!-- منتج 3 -->   <div class="product">     <img src="https://i.ibb.co/39PvqdQd/20260310-165800.jpg" alt="ماء زمزم">     <h3>✔️ ماء زمزم المبارك</h3>     <p>💧 ماء زمزم المبارك – نقاء وطهارة من مكة المكرمة.</p>     <p class="price">4500 دج</p>     <select id="zamzam">       <option value="0">اختر الكمية</option>       <option>1</option>       <option>2</option>       <option>3</option>       <option>4</option>     </select>   </div> 
+  <div style="text-align:center; margin:20px 0;">   <hr style="border:none; height:1px; background:#ddd; margin-bottom:10px;">   <p style="color:#8b4513; font-weight:bold;">🛒 اختر منتجاتك ثم أكمل معلومات الطلب في الأسفل</p> </div> 
+</div> 
+<script> function sendOrder(){   let ajwa=document.getElementById("ajwa").value;   let honey=document.getElementById("honey").value;   let zamzam=document.getElementById("zamzam").value;   let message="طلب جديد:\n";   if(ajwa>0) message+="عجوة المدينة: "+ajwa+"\n";   if(honey>0) message+="عسل الحبة السوداء: "+honey+"\n";   if(zamzam>0) message+="ماء زمزم: "+zamzam+"\n";   window.open("https://wa.me/213699091938?text="+encodeURIComponent(message), "_blank"); } </script> 
+</body> 
 </html>
+  
 
 </div>
 
