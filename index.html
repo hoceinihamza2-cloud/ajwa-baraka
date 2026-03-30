@@ -1,14 +1,20 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عجوة البركة</title>
+
 <style>
-/* ====== BODY ====== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f9f9f9;
 }
 
-/* ====== HEADER ====== */
+/* HEADER */
 header {
-  background: white;
+  background: #fff;
   padding: 20px;
   text-align: center;
   font-size: 26px;
@@ -16,7 +22,7 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
-/* ====== HERO ====== */
+/* HERO */
 .hero {
   background: #222;
   color: #fff;
@@ -34,7 +40,7 @@ header {
   font-size: 18px;
 }
 
-/* ====== CONTAINER ====== */
+/* PRODUCTS GRID */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -42,7 +48,7 @@ header {
   padding: 30px 20px;
 }
 
-/* ====== PRODUCT CARD ====== */
+/* PRODUCT CARD */
 .product {
   background: white;
   border-radius: 12px;
@@ -59,7 +65,7 @@ header {
 
 .product img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -75,7 +81,7 @@ header {
   margin-bottom: 10px;
 }
 
-/* ====== INPUT & BUTTON ====== */
+/* INPUT & BUTTON */
 input[type=number] {
   width: 70px;
   padding: 6px;
@@ -98,7 +104,7 @@ button:hover {
   background: #333;
 }
 
-/* ====== FOOTER ====== */
+/* FOOTER */
 footer {
   background: white;
   text-align: center;
@@ -107,6 +113,10 @@ footer {
   border-top: 1px solid #ddd;
 }
 </style>
+
+</head>
+
+<body>
 
 <header>🌾 عجوة البركة</header>
 
@@ -117,30 +127,57 @@ footer {
 
 <div class="container">
 
+  <!-- منتج 1 -->
   <div class="product">
-    <img src="https://via.placeholder.com/300">
+    <img src="https://i.imgur.com/6u5H6J6.jpg" alt="عجوة المدينة">
     <h3>عجوة المدينة</h3>
     <p class="price">4000 دج</p>
-    <!-- حقل الكمية موجود عندك مسبقاً -->
+    <input type="number" id="ajwa" min="0" placeholder="الكمية">
   </div>
 
+  <!-- منتج 2 -->
   <div class="product">
-    <img src="https://via.placeholder.com/300">
+    <img src="https://i.imgur.com/ZcL5y7Y.jpg" alt="عسل الحبة السوداء">
     <h3>عسل الحبة السوداء</h3>
     <p class="price">4500 دج</p>
-    <!-- حقل الكمية موجود عندك مسبقاً -->
+    <input type="number" id="honey" min="0" placeholder="الكمية">
   </div>
 
+  <!-- منتج 3 -->
   <div class="product">
-    <img src="https://via.placeholder.com/300">
+    <img src="https://i.imgur.com/Od4jL5Y.jpg" alt="ماء زمزم">
     <h3>ماء زمزم</h3>
     <p class="price">4500 دج</p>
-    <!-- حقل الكمية موجود عندك مسبقاً -->
+    <input type="number" id="zamzam" min="0" placeholder="الكمية">
   </div>
 
 </div>
 
+<div style="text-align:center; margin:20px;">
+  <button onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+</div>
+
+<script>
+function sendOrder(){
+  let ajwa = document.getElementById("ajwa").value;
+  let honey = document.getElementById("honey").value;
+  let zamzam = document.getElementById("zamzam").value;
+  let message = "طلب جديد:\n";
+  if(ajwa>0) message += "عجوة المدينة: "+ajwa+"\n";
+  if(honey>0) message += "عسل الحبة السوداء: "+honey+"\n";
+  if(zamzam>0) message += "ماء زمزم: "+zamzam+"\n";
+  if(ajwa>0 || honey>0 || zamzam>0){
+    window.open("https://wa.me/213699091938?text="+encodeURIComponent(message), "_blank");
+  } else {
+    alert("رجاء اختر كمية على الأقل لمنتج واحد");
+  }
+}
+</script>
+
 <footer>© 2026 جميع الحقوق محفوظة - عجوة البركة</footer>
+
+</body>
+</html>
 
 </div>
 
