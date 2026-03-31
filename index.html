@@ -365,4 +365,39 @@
         "Biskra": {home:950, office:600}, "Béchar": {home:1400, office:1100}, "Blida": {home:500, office:400},
         "Bouira": {home:850, office:450}, "Tamanrasset": {home:1800, office:1400}, "Tébessa": {home:950, office:600},
         "Tlemcen": {home:850, office:500}, "Tiaret": {home:850, office:500}, "Tizi Ouzou": {home:850, office:450},
-        "Alger": {home:700, office:
+        "Alger": {home:700, office:400}, "Djelfa": {home:900, office:600}, "Jijel": {home:850, office:500},
+        "Sétif": {home:850, office:450}, "Saïda": {home:900, office:600}, "Skikda": {home:850, office:500},
+        "Sidi Bel Abbès": {home:850, office:500}, "Annaba": {home:850, office:500}, "Guelma": {home:900, office:600},
+        "Constantine": {home:850, office:450}, "Médéa": {home:850, office:450}, "Mostaganem": {home:850, office:500},
+        "M'Sila": {home:850, office:500}, "Mascara": {home:900, office:600}, "Ouargla": {home:1100, office:800},
+        "Oran": {home:850, office:450}, "El Bayadh": {home:1100, office:800}, "Illizi": {home:2000, office:1700},
+        "Bordj Bou Arreridj": {home:850, office:450}, "Boumerdès": {home:850, office:450}, "El Tarf": {home:950, office:600},
+        "Tindouf": {home:1800, office:1400}, "Tissemsilt": {home:850, office:500}, "El Oued": {home:1100, office:800},
+        "Khenchela": {home:900, office:600}, "Souk Ahras": {home:900, office:600}, "Tipaza": {home:700, office:400},
+        "Mila": {home:850, office:500}, "Aïn Defla": {home:850, office:450}, "Naâma": {home:1100, office:800},
+        "Aïn Témouchent": {home:900, office:600}, "Ghardaïa": {home:1100, office:800}, "Relizane": {home:850, office:500},
+        "Timimoun": {home:1400, office:1100}, "Ouled Djellal": {home:1000, office:700}, "Beni Abbes": {home:1400, office:1100},
+        "In Salah": {home:1400, office:1100}, "In Guezzam": {home:2000, office:1700}, "Touggourt": {home:1100, office:800},
+        "Djanet": {home:2000, office:1700}, "El M'Ghair": {home:1100, office:800}, "El Meniaa": {home:1300, office:1000}
+    };
+
+    const wilayaSelect = document.getElementById('wilayaSelect');
+    const deliveryType = document.getElementById('deliveryType');
+    const deliveryPrice = document.getElementById('deliveryPrice');
+
+    wilayaSelect.addEventListener('change', updatePrice);
+    deliveryType.addEventListener('change', updatePrice);
+
+    function updatePrice(){
+        const wilaya = wilayaSelect.value;
+        const type = deliveryType.value;
+        if(wilaya && type){
+            deliveryPrice.textContent = "سعر التوصيل: " + prices[wilaya][type] + " DA";
+        } else {
+            deliveryPrice.textContent = "سعر التوصيل: -";
+        }
+    }
+</script>
+
+</body>
+</html>
