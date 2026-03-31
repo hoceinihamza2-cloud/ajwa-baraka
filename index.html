@@ -3,180 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عجوة البركة</title>
-
+<title>عجوة المدينة</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f5f5; /* خلفية فاتحة */
-  color: #333;
-}
-
-/* HEADER */
-header {
-  background: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-}
-
-/* HERO */
-.hero {
-  background: #f0f0f0; /* خلفية فاتحة للبانر */
-  color: #222;
-  text-align: center;
-  padding: 40px 20px;
-  border-bottom: 1px solid #ddd;
-}
-
-.hero h1 {
-  font-size: 32px;
-  margin: 0;
-}
-
-.hero p {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-/* PRODUCTS GRID */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 30px 20px;
-}
-
-/* PRODUCT CARD */
-.product {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.product img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product h3 {
-  margin: 12px 0 6px;
-  font-size: 20px;
-}
-
-.product .price {
-  color: green;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* INPUT & BUTTON */
-input[type=number] {
-  width: 70px;
-  padding: 6px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-button {
-  background: #007b00;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background: #005700;
-}
-
-/* FOOTER */
-footer {
-  background: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  border-top: 1px solid #ddd;
-}
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; direction: rtl; }
+header { background:#4CAF50; color:white; padding:20px; text-align:center; font-size:2em; }
+.intro { text-align:center; padding:10px 20px; font-size:1.2em; }
+.slider { width:100%; max-width:800px; margin:20px auto; overflow:hidden; position:relative; }
+.slides img { width:100%; display:none; }
+.products { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+.product { background:white; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.2); padding:15px; width:250px; text-align:center; }
+.product img { width:100%; height:200px; object-fit:contain; }
+.product h3 { margin:10px 0 5px; }
+.product p { margin:5px 0; }
+.product input { width:50px; padding:5px; text-align:center; }
+.delivery { max-width:800px; margin:20px auto; background:white; padding:15px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.2); overflow-x:auto; }
+.delivery table { width:100%; border-collapse:collapse; }
+.delivery th, .delivery td { border:1px solid #ddd; padding:8px; text-align:center; }
+.delivery th { background:#4CAF50; color:white; }
+.order-btn { display:block; width:250px; margin:20px auto; text-align:center; background:#25D366; color:white; padding:15px; font-size:1.2em; border-radius:10px; text-decoration:none; }
+.social { text-align:center; margin:20px 0; }
+.social img { width:40px; margin:0 10px; }
+footer { text-align:center; padding:15px; background:#333; color:white; }
+.qr { text-align:center; margin:20px 0; }
+.qr img { width:150px; }
 </style>
-
 </head>
-
 <body>
 
-<header>🌾 عجوة البركة</header>
+<header>عجوة المدينة</header>
 
-<div class="hero">
-  <h1>منتجات طبيعية أصلية</h1>
-  <p>عجوة المدينة - عسل الحبة السوداء - ماء زمزم</p>
+<div class="intro">
+    منتجات طبيعية أصلية: عجوة المدينة – عسل الحبة السوداء – ماء زمزم
 </div>
 
-<div class="container">
-
-  <!-- منتج 1 -->
-  <div class="product">
-    <img src="https://i.imgur.com/8l1U3hO.jpg" alt="عجوة المدينة">
-    <h3>عجوة المدينة</h3>
-    <p class="price">4000 دج</p>
-    <input type="number" id="ajwa" min="0" placeholder="الكمية">
-  </div>
-
-  <!-- منتج 2 -->
-  <div class="product">
-    <img src="https://i.imgur.com/3T8oR1u.jpg" alt="عسل الحبة السوداء">
-    <h3>عسل الحبة السوداء</h3>
-    <p class="price">4500 دج</p>
-    <input type="number" id="honey" min="0" placeholder="الكمية">
-  </div>
-
-  <!-- منتج 3 -->
-  <div class="product">
-    <img src="https://i.imgur.com/w1cAxLP.jpg" alt="ماء زمزم">
-    <h3>ماء زمزم</h3>
-    <p class="price">4500 دج</p>
-    <input type="number" id="zamzam" min="0" placeholder="الكمية">
-  </div>
-
+<div class="slider">
+    <img src="slide1.jpg" alt="Slide 1" class="slide">
+    <img src="slide2.jpg" alt="Slide 2" class="slide">
+    <img src="slide3.jpg" alt="Slide 3" class="slide">
 </div>
-<option value="Illizi">33 - إليزي</option> <option value="BordjBouArreridj">34 - برج بوعريريج</option> <option value="Boumerdes">35 - بومرداس</option> <option value="ElTarf">36 - الطارف</option> <option value="Tindouf">37 - تندوف</option> <option value="Tissemsilt">38 - تيسمسيلت</option> <option value="ElOued">39 - الوادي</option> <option value="Khenchela">40 - خنشلة</option> <option value="SoukAhras">41 - سوق أهراس</option> <option value="Tipaza">42 - تيبازة</option> <option value="Mila">43 - ميلة</option> <option value="AinDefla">44 - عين الدفلى</option> <option value="Naama">45 - النعامة</option> <option value="AinTemouchent">46 - عين تموشنت</option> <option value="Ghardaia">47 - غرداية</option> <option value="Relizane">48 - غليزان</option> <option value="Timimoun">49 - تيميمون</option> <option value="OuledDjellal">50 - أولاد جلال</option> <option value="BeniAbbes">51 - بني عباس</option> <option value="InSalah">52 - عين صالح</option> <option value="InGuezzam">53 - عين قزام</option> <option value="Touggourt">54 - توقرت</option> <option value="Djanet">55 - جانت</option> <option value="ElMGhair">56 - المغير</option> <option value="ElMeniaa">57 - المنيعة</option> <option value="BordjTlemcen">58 - برج تلمسان</option> </select> <select id="deliveryType" onchange="updatePrice()"> <option value="">نوع التوصيل</option> <option value="home">توصيل للمنزل</option> <option value="desk">توصيل لمكتب التوصيل</option> </select> <div id="deliveryPrice" style="margin-top:10px; font-weight:bold; color:#8b4513;"></div> </div> <button onclick="sendOrder()">اطلب الآن عبر واتساب</button> </div> <script> // سلايدر تلقائي let current=0; function showSlide(i){   document.getElementById("slides").style.transform="translateX(-"+(i*100)+"%)"; } setInterval(function(){current=(current+1)%3; showSlide(current);},3000); // أسعار التوصيل لكل 58 ولاية const prices={ Adrar:{home:1400,desk:1100},Chlef:{home:850,desk:450},Laghouat:{home:1000,desk:700},OumElBouaghi:{home:850,desk:500}, Batna:{home:850,desk:500},Bejaia:{home:850,desk:500},Biskra:{home:950,desk:600},Bechar:{home:1400,desk:1100}, Blida:{home:500,desk:400},Bouira:{home:850,desk:450},Tamanrasset:{home:1800,desk:1400},Tebessa:{home:950,desk:600}, Tlemcen:{home:850,desk:500},Tiaret:{home:850,desk:500},TiziOuzou:{home:850,desk:450},Alger:{home:700,desk:400}, Djelfa:{home:900,desk:600},Jijel:{home:850,desk:500},Setif:{home:850,desk:450},Saida:{home:900,desk:600}, Skikda:{home:850,desk:500},SidiBelAbbes:{home:850,desk:500},Annaba:{home:850,desk:500},Guelma:{home:900,desk:600}, Constantine:{home:850,desk:450},Medea:{home:850,desk:450},Mostaganem:{home:850,desk:500},MSila:{home:850,desk:500}, Mascara:{home:900,desk:600},Ouargla:{home:1100,desk:800},Oran:{home:850,desk:450},ElBayadh:{home:1100,desk:800}, Illizi:{home:2000,desk:1700},BordjBouArreridj:{home:850,desk:450},Boumerdes:{home:850,desk:450},ElTarf:{home:950,desk:600}, Tindouf:{home:1800,desk:1400},Tissemsilt:{home:850,desk:500},ElOued:{home:1100,desk:800},Khenchela:{home:900,desk:600}, SoukAhras:{home:900,desk:600},Tipaza:{home:700,desk:400},Mila:{home:850,desk:500},AinDefla:{home:850,desk:450}, Naama:{home:1100,desk:800},AinTemouchent:{home:900,desk:600},Ghardaia:{home:1100,desk:800},Relizane:{home:850,desk:500}, Timimoun:{home:1400,desk:1100},OuledDjellal:{home:1000,desk:700},BeniAbbes:{home:1400,desk:1100},InSalah:{home:1400,desk:1100}, InGuezzam:{home:2000,desk:1700},Touggourt:{home:1100,desk:800},Djanet:{home:2000,desk:1700},ElMGhair:{home:1100,desk:800}, ElMeniaa:{home:1300,desk:1000},BordjTlemcen:{home:900,desk:600} }; function updatePrice(){   let wilaya=document.getElementById("wilaya").value;   let type=document.getElementById("deliveryType").value;   let result=document.getElementById("deliveryPrice");   if(wilaya && type && prices[wilaya]){ result.innerHTML="سعر التوصيل: "+prices[wilaya][type]+" دج"; }   else{ result.innerHTML=""; } } function sendOrder(){     let name=document.getElementById("name").value.trim();     let phone=document.getElementById("phone").value.trim();     let wilaya=document.getElementById("wilaya").value;     let delivery=document.getElementById("deliveryType").value;     let ajwa=document.getElementById("ajwa").value;     let honey=document.getElementById("honey").value;     let zamzam=document.getElementById("zamzam").value;     if(!name||!phone||!wilaya||!delivery){alert("يرجى تعبئة جميع البيانات!"); return;}     let message="طلب جديد:\n";     if(ajwa>0) message+="عجوة المدينة: "+ajwa+"\n";     if(honey>0) message+="عسل الحبة السوداء: "+honey+"\n";     if(zamzam>0) message+="ماء زمزم: "+zamzam+"\n";     message+="الاسم: "+name+"\nالهاتف: "+phone+"\nالولاية: "+wilaya+"\nنوع التوصيل: "+(delivery=="home"?"توصيل للمنزل":"توصيل لمكتب التوصيل");     window.open("https://wa.me/213699091938?text="+encodeURIComponent(message),"_blank"); } </script> </body> </html> <!-- أيقونات التواصل الاجتماعي --> <div style="text-align:center; margin-top:20px;">   <a href="https://www.facebook.com/share/1BeH3TADsR/" target="_blank">     <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="40" style="margin:0 10px;">   </a>   <a href="https://www.instagram.com/ajwa_baraka?igsh=MTF0eTFhZmp6ZWl3MA==" target="_blank">     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="40" style="margin:0 10px;">   </a>   <a href="https://www.tiktok.com/@hamza.store22?_r=1&_t=ZS-951OEjrkOBt" target="_blank">     <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" width="40" style="margin:0 10px;">   </a>   <a href="https://youtube.com/@alhoceini/community?si=9MNmA6sh13fcp0Dv" target="_blank">     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="40" style="margin:0 10px;">   </a> </div>
-<div style="text-align:center; margin:20px;">
-  <button onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+
+<div class="products">
+    <div class="product">
+        <img src="ajwa.jpg" alt="عجوة المدينة">
+        <h3>عجوة المدينة</h3>
+        <p>سعر: 2000 DA</p>
+        <p>الكمية: <input type="number" min="1" value="1" id="qty-ajwa"></p>
+    </div>
+    <div class="product">
+        <img src="blackseed_honey.jpg" alt="عسل الحبة السوداء">
+        <h3>عسل الحبة السوداء</h3>
+        <p>سعر: 3500 DA</p>
+        <p>الكمية: <input type="number" min="1" value="1" id="qty-honey"></p>
+    </div>
+    <div class="product">
+        <img src="zamzam_water.jpg" alt="ماء زمزم">
+        <h3>ماء زمزم</h3>
+        <p>سعر: 1500 DA</p>
+        <p>الكمية: <input type="number" min="1" value="1" id="qty-zamzam"></p>
+    </div>
 </div>
+
+<div class="delivery">
+    <h3>أسعار التوصيل لكل الولايات (المنزل / مكتب التوصيل)</h3>
+    <table>
+        <tr><th>الولاية</th><th>المنزل</th><th>مكتب التوصيل</th></tr>
+        <tr><td>Adrar</td><td>1400</td><td>1100</td></tr>
+        <tr><td>Chlef</td><td>850</td><td>450</td></tr>
+        <tr><td>Laghouat</td><td>1000</td><td>700</td></tr>
+        <tr><td>Oum El Bouaghi</td><td>850</td><td>500</td></tr>
+        <tr><td>Batna</td><td>850</td><td>500</td></tr>
+        <tr><td>Béjaïa</td><td>850</td><td>500</td></tr>
+        <tr><td>Biskra</td><td>950</td><td>600</td></tr>
+        <tr><td>Béchar</td><td>1400</td><td>1100</td></tr>
+        <tr><td>Blida</td><td>500</td><td>400</td></tr>
+        <tr><td>Bouira</td><td>850</td><td>450</td></tr>
+        <tr><td>Tamanrasset</td><td>1800</td><td>1400</td></tr>
+        <tr><td>Tébessa</td><td>950</td><td>600</td></tr>
+        <tr><td>Tlemcen</td><td>850</td><td>500</td></tr>
+        <tr><td>Tiaret</td><td>850</td><td>500</td></tr>
+        <tr><td>Tizi Ouzou</td><td>850</td><td>450</td></tr>
+        <tr><td>Alger</td><td>700</td><td>400</td></tr>
+        <tr><td>Djelfa</td><td>900</td><td>600</td></tr>
+        <tr><td>Jijel</td><td>850</td><td>500</td></tr>
+        <tr><td>Sétif</td><td>850</td><td>450</td></tr>
+        <tr><td>Saïda</td><td>900</td><td>600</td></tr>
+        <tr><td>Skikda</td><td>850</td><td>500</td></tr>
+        <tr><td>Sidi Bel Abbès</td><td>850</td><td>500</td></tr>
+        <tr><td>Annaba</td><td>850</td><td>500</td></tr>
+        <tr><td>Guelma</td><td>900</td><td>600</td></tr>
+        <tr><td>Constantine</td><td>850</td><td>450</td></tr>
+        <tr><td>Médéa</td><td>850</td><td>450</td></tr>
+        <tr><td>Mostaganem</td><td>850</td><td>500</td></tr>
+        <tr><td>M'Sila</td><td>850</td><td>500</td></tr>
+        <tr><td>Mascara</td><td>900</td><td>600</td></tr>
+        <tr><td>Ouargla</td><td>1100</td><td>800</td></tr>
+        <tr><td>Oran</td><td>850</td><td>450</td></tr>
+        <tr><td>El Bayadh</td><td>1100</td><td>800</td></tr>
+        <tr><td>Illizi</td><td>2000</td><td>1700</td></tr>
+        <tr><td>Bordj Bou Arreridj</td><td>850</td><td>450</td></tr>
+        <tr><td>Boumerdès</td><td>850</td><td>450</td></tr>
+        <tr><td>El Tarf</td><td>950</td><td>600</td></tr>
+        <tr><td>Tindouf</td><td>1800</td><td>1400</td></tr>
+        <tr><td>Tissemsilt</td><td>850</td><td>500</td></tr>
+        <tr><td>El Oued</td><td>1100</td><td>800</td></tr>
+        <tr><td>Khenchela</td><td>900</td><td>600</td></tr>
+        <tr><td>Souk Ahras</td><td>900</td><td>600</td></tr>
+        <tr><td>Tipaza</td><td>700</td><td>400</td></tr>
+        <tr><td>Mila</td><td>850</td><td>500</td></tr>
+        <tr><td>Aïn Defla</td><td>850</td><td>450</td></tr>
+        <tr><td>Naâma</td><td>1100</td><td>800</td></tr>
+        <tr><td>Aïn Témouchent</td><td>900</td><td>600</td></tr>
+        <tr><td>Ghardaïa</td><td>1100</td><td>800</td></tr>
+        <tr><td>Relizane</td><td>850</td><td>500</td></tr>
+        <tr><td>Timimoun</td><td>1400</td><td>1100</td></tr>
+        <tr><td>Ouled Djellal</td><td>1000</td><td>700</td></tr>
+        <tr><td>Beni Abbes</td><td>1400</td><td>1100</td></tr>
+        <tr><td>In Salah</td><td>1400</td><td>1100</td></tr>
+        <tr><td>In Guezzam</td><td>2000</td><td>1700</td></tr>
+        <tr><td>Touggourt</td><td>1100</td><td>800</td></tr>
+        <tr><td>Djanet</td><td>2000</td><td>1700</td></tr>
+        <tr><td>El M'Ghair</td><td>1100</td><td>800</td></tr>
+        <tr><td>El Meniaa</td><td>1300</td><td>1000</td></tr>
+    </table>
+</div>
+
+<a href="#" class="order-btn" id="whatsapp-btn">اطلب الآن عبر واتساب</a>
+
+<div class="social">
+    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+    <a href="#"><img src="tiktok.png" alt="TikTok"></a>
+    <a href="#"><img src="youtube.png" alt="YouTube"></a>
+</div>
+
+<div class="qr">
+    <img src="qr.png" alt="QR Code">
+</div>
+
+<footer>
+    جميع الحقوق محفوظة 2026
+</footer>
 
 <script>
-function sendOrder(){
-  let ajwa = document.getElementById("ajwa").value;
-  let honey = document.getElementById("honey").value;
-  let zamzam = document.getElementById("zamzam").value;
-  let message = "طلب جديد:\n";
-  if(ajwa>0) message += "عجوة المدينة: "+ajwa+"\n";
-  if(honey>0) message += "عسل الحبة السوداء: "+honey+"\n";
-  if(zamzam>0) message += "ماء زمزم: "+zamzam+"\n";
-  if(ajwa>0 || honey>0 || zamzam>0){
-    window.open("https://wa.me/213699091938?text="+encodeURIComponent(message), "_blank");
-  } else {
-    alert("رجاء اختر كمية على الأقل لمنتج واحد");
-  }
+// Slider automatique
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+function showSlides() {
+    slides.forEach(s => s.style.display='none');
+    slideIndex++;
+    if(slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex-1].style.display = 'block';
+    setTimeout(showSlides, 3000);
 }
-</script>
+showSlides();
 
-<footer>© 2026 جميع الحقوق محفوظة - عجوة البركة</footer>
+// WhatsApp dynamic message
+const whatsappBtn = document.getElementById('whatsapp-btn');
+whatsappBtn.addEventListener('click', () => {
+    const qtyAjwa = document.getElementById('qty-ajwa').value;
+    const qtyHoney = document.getElementById('qty-honey').value;
+    const qtyZamzam = document.getElementById('qty-zamzam').value;
+    const message = `السلام عليكم، أريد الطلب:\nعجوة المدينة: ${qtyAjwa}\nعسل الحبة السوداء: ${qtyHoney}\nماء زمزم: ${qtyZamzam}`;
+    const phone = "XXXXXXXXXXX"; // ضع رقم واتساب هنا بدون +
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+});
+</script>
 
 </body>
 </html>
