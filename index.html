@@ -10,16 +10,15 @@ body {font-family: Arial;margin:0;background:#f5f5f5;}
 .container {max-width:1000px;margin:auto;padding:15px;}
 .card {background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1);padding:20px;margin-bottom:20px;}
 .product img {width:100%;height:250px;object-fit:contain;border-radius:10px;cursor:pointer;}
-.title {font-size:22px;font-weight:bold;}
-.price {color:#b88900;font-size:20px;font-weight:bold;}
-.btn {display:block;text-align:center;background:#25D366;color:#fff;padding:12px;border-radius:10px;text-decoration:none;}
+.title {font-size:22px;font-weight:bold;margin-bottom:5px;}
+.price {color:#b88900;font-size:20px;font-weight:bold;margin-bottom:10px;}
+.btn {display:block;text-align:center;background:#25D366;color:#fff;padding:12px;border-radius:10px;text-decoration:none;margin-top:10px;cursor:pointer;}
 .header {text-align:center;padding:15px;font-size:24px;font-weight:bold;background:#fff;margin-bottom:10px;}
-
+input[type=number], input[type=text], select {width:100%;padding:10px;border-radius:10px;margin-top:5px;margin-bottom:10px;box-sizing:border-box;}
+footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 .whatsapp-float {position:fixed;bottom:20px;left:20px;background:#25D366;color:#fff;padding:12px;border-radius:50px;text-decoration:none;}
-
 .modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
 .modal img {max-width:90%;max-height:80%;border-radius:10px;}
-
 .social-fixed {position:fixed;right:15px;bottom:80px;display:flex;flex-direction:column;gap:10px;}
 .social-fixed a {width:45px;height:45px;display:flex;align-items:center;justify-content:center;border-radius:50%;}
 .facebook {background:#1877F2;}
@@ -27,12 +26,7 @@ body {font-family: Arial;margin:0;background:#f5f5f5;}
 .tiktok {background:#000;}
 .youtube {background:#FF0000;}
 .social-fixed img {width:22px;}
-
-select {width:100%;padding:10px;border-radius:10px;margin-top:10px;}
-
-footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 </style>
-
 </head>
 
 <body>
@@ -46,30 +40,32 @@ footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 <img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" onclick="openImage(this.src)">
 <div class="title">عجوة المدينة</div>
 <div class="price">السعر: 4000 دج</div>
-<a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+<input type="number" min="0" value="0" id="q1" placeholder="الكمية">
 </div>
 
 <div class="card product">
 <img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" onclick="openImage(this.src)">
 <div class="title">عسل الحبة السوداء</div>
 <div class="price">السعر: 4500 دج</div>
-<a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+<input type="number" min="0" value="0" id="q2" placeholder="الكمية">
 </div>
 
 <div class="card product">
 <img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" onclick="openImage(this.src)">
 <div class="title">ماء زمزم</div>
 <div class="price">السعر: 4500 دج</div>
-<a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+<input type="number" min="0" value="0" id="q3" placeholder="الكمية">
+</div>
+
+<!-- رقم هاتف الزبون -->
+<div class="card">
+<h3>رقم هاتفك</h3>
+<input type="text" id="phone" placeholder="اكتب رقمك">
 </div>
 
 <!-- التوصيل -->
 <div class="card">
-
-<input type="text" id="phone" placeholder="رقم الهاتف (مثال: 0555555555)" style="width:100%;padding:10px;border-radius:10px;margin-bottom:10px;">
-
 <h3>اختر الولاية ونوع التوصيل</h3>
-
 <select id="wilaya">
 <option value="">اختر الولاية</option>
 <option>Adrar</option><option>Chlef</option><option>Laghouat</option>
@@ -83,15 +79,14 @@ footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 <option>Constantine</option><option>Médéa</option><option>Mostaganem</option>
 <option>M'Sila</option><option>Mascara</option><option>Ouargla</option>
 <option>Oran</option><option>El Bayadh</option><option>Illizi</option>
-<option>Bordj Bou Arreridj</option><option>Boumerdès</option>
-<option>El Tarf</option><option>Tindouf</option><option>Tissemsilt</option>
-<option>El Oued</option><option>Khenchela</option><option>Souk Ahras</option>
-<option>Tipaza</option><option>Mila</option><option>Aïn Defla</option>
-<option>Naâma</option><option>Aïn Témouchent</option><option>Ghardaïa</option>
-<option>Relizane</option><option>Timimoun</option><option>Ouled Djellal</option>
-<option>Beni Abbes</option><option>In Salah</option><option>In Guezzam</option>
-<option>Touggourt</option><option>Djanet</option>
-<option>El M'Ghair</option><option>El Meniaa</option>
+<option>Bordj Bou Arreridj</option><option>Boumerdès</option><option>El Tarf</option>
+<option>Tindouf</option><option>Tissemsilt</option><option>El Oued</option>
+<option>Khenchela</option><option>Souk Ahras</option><option>Tipaza</option>
+<option>Mila</option><option>Aïn Defla</option><option>Naâma</option>
+<option>Aïn Témouchent</option><option>Ghardaïa</option><option>Relizane</option>
+<option>Timimoun</option><option>Ouled Djellal</option><option>Beni Abbes</option>
+<option>In Salah</option><option>In Guezzam</option><option>Touggourt</option>
+<option>Djanet</option><option>El M'Ghair</option><option>El Meniaa</option>
 </select>
 
 <select id="type">
@@ -103,6 +98,9 @@ footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 <p id="price">سعر التوصيل: -</p>
 </div>
 
+<!-- زر إرسال الطلبية -->
+<button class="btn" onclick="sendOrder()">اطلب الآن عبر واتساب</button>
+
 </div>
 
 <a class="whatsapp-float" href="https://wa.me/213699091938">واتساب</a>
@@ -113,77 +111,75 @@ footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 
 <script>
 const prices = {
-"Adrar": {home:1400, office:1100},
-"Chlef": {home:850, office:450},
-"Laghouat": {home:1000, office:700},
-"Oum El Bouaghi": {home:850, office:500},
-"Batna": {home:850, office:500},
-"Béjaïa": {home:850, office:500},
-"Biskra": {home:950, office:600},
-"Béchar": {home:1400, office:1100},
-"Blida": {home:500, office:400},
-"Bouira": {home:850, office:450},
-"Tamanrasset": {home:1800, office:1400},
-"Tébessa": {home:950, office:600},
-"Tlemcen": {home:850, office:500},
-"Tiaret": {home:850, office:500},
-"Tizi Ouzou": {home:850, office:450},
-"Alger": {home:700, office:400},
-"Djelfa": {home:900, office:600},
-"Jijel": {home:850, office:500},
-"Sétif": {home:850, office:450},
-"Saïda": {home:900, office:600},
-"Skikda": {home:850, office:500},
-"Sidi Bel Abbès": {home:850, office:500},
-"Annaba": {home:850, office:500},
-"Guelma": {home:900, office:600},
-"Constantine": {home:850, office:450},
-"Médéa": {home:850, office:450},
-"Mostaganem": {home:850, office:500},
-"M'Sila": {home:850, office:500},
-"Mascara": {home:900, office:600},
-"Ouargla": {home:1100, office:800},
-"Oran": {home:850, office:450},
-"El Bayadh": {home:1100, office:800},
-"Illizi": {home:2000, office:1700},
-"Bordj Bou Arreridj": {home:850, office:450},
-"Boumerdès": {home:850, office:450},
-"El Tarf": {home:950, office:600},
-"Tindouf": {home:1800, office:1400},
-"Tissemsilt": {home:850, office:500},
-"El Oued": {home:1100, office:800},
-"Khenchela": {home:900, office:600},
-"Souk Ahras": {home:900, office:600},
-"Tipaza": {home:700, office:400},
-"Mila": {home:850, office:500},
-"Aïn Defla": {home:850, office:450},
-"Naâma": {home:1100, office:800},
-"Aïn Témouchent": {home:900, office:600},
-"Ghardaïa": {home:1100, office:800},
-"Relizane": {home:850, office:500},
-"Timimoun": {home:1400, office:1100},
-"Ouled Djellal": {home:1000, office:700},
-"Beni Abbes": {home:1400, office:1100},
-"In Salah": {home:1400, office:1100},
-"In Guezzam": {home:2000, office:1700},
-"Touggourt": {home:1100, office:800},
-"Djanet": {home:2000, office:1700},
-"El M'Ghair": {home:1100, office:800},
-"El Meniaa": {home:1300, office:1000}
+"Adrar": {home:1400, office:1100},"Chlef": {home:850, office:450},"Laghouat": {home:1000, office:700},
+"Oum El Bouaghi": {home:850, office:500},"Batna": {home:850, office:500},"Béjaïa": {home:850, office:500},
+"Biskra": {home:950, office:600},"Béchar": {home:1400, office:1100},"Blida": {home:500, office:400},
+"Bouira": {home:850, office:450},"Tamanrasset": {home:1800, office:1400},"Tébessa": {home:950, office:600},
+"Tlemcen": {home:850, office:500},"Tiaret": {home:850, office:500},"Tizi Ouzou": {home:850, office:450},
+"Alger": {home:700, office:400},"Djelfa": {home:900, office:600},"Jijel": {home:850, office:500},
+"Sétif": {home:850, office:450},"Saïda": {home:900, office:600},"Skikda": {home:850, office:500},
+"Sidi Bel Abbès": {home:850, office:500},"Annaba": {home:850, office:500},"Guelma": {home:900, office:600},
+"Constantine": {home:850, office:450},"Médéa": {home:850, office:450},"Mostaganem": {home:850, office:500},
+"M'Sila": {home:850, office:500},"Mascara": {home:900, office:600},"Ouargla": {home:1100, office:800},
+"Oran": {home:850, office:450},"El Bayadh": {home:1100, office:800},"Illizi": {home:2000, office:1700},
+"Bordj Bou Arreridj": {home:850, office:450},"Boumerdès": {home:850, office:450},"El Tarf": {home:950, office:600},
+"Tindouf": {home:1800, office:1400},"Tissemsilt": {home:850, office:500},"El Oued": {home:1100, office:800},
+"Khenchela": {home:900, office:600},"Souk Ahras": {home:900, office:600},"Tipaza": {home:700, office:400},
+"Mila": {home:850, office:500},"Aïn Defla": {home:850, office:450},"Naâma": {home:1100, office:800},
+"Aïn Témouchent": {home:900, office:600},"Ghardaïa": {home:1100, office:800},"Relizane": {home:850, office:500},
+"Timimoun": {home:1400, office:1100},"Ouled Djellal": {home:1000, office:700},"Beni Abbes": {home:1400, office:1100},
+"In Salah": {home:1400, office:1100},"In Guezzam": {home:2000, office:1700},"Touggourt": {home:1100, office:800},
+"Djanet": {home:2000, office:1700},"El M'Ghair": {home:1100, office:800},"El Meniaa": {home:1300, office:1000}
 };
 
 document.getElementById('wilaya').onchange = update;
 document.getElementById('type').onchange = update;
 
 function update(){
-let w = document.getElementById('wilaya').value;
-let t = document.getElementById('type').value;
+    let w = document.getElementById('wilaya').value;
+    let t = document.getElementById('type').value;
 
-if(prices[w] && t){
-document.getElementById('price').innerText = "سعر التوصيل: " + prices[w][t] + " دج";
-}else{
-document.getElementById('price').innerText = "سعر التوصيل: -";
+    if(prices[w] && t){
+        document.getElementById('price').innerText = "سعر التوصيل: " + prices[w][t] + " دج";
+    }else{
+        document.getElementById('price').innerText = "سعر التوصيل: -";
+    }
 }
+
+// إرسال الطلبية إلى واتساب
+function sendOrder(){
+    let q1 = document.getElementById("q1").value;
+    let q2 = document.getElementById("q2").value;
+    let q3 = document.getElementById("q3").value;
+
+    let phoneClient = document.getElementById("phone").value;
+    let wilaya = document.getElementById("wilaya").value;
+    let type = document.getElementById("type").value;
+
+    let message = "";
+
+    if(q1 > 0) message += q1 + " عجوة المدينة%0A";
+    if(q2 > 0) message += q2 + " عسل الحبة السوداء%0A";
+    if(q3 > 0) message += q3 + " ماء زمزم%0A";
+
+    if(message === "") { alert("اختر المنتجات"); return; }
+    if(phoneClient === "") { alert("اكتب رقم الهاتف"); return; }
+    if(wilaya === "" || type === "") { alert("اختر الولاية ونوع التوصيل"); return; }
+
+    message += "%0Aرقم الهاتف: " + phoneClient + "%0A";
+    message += "العنوان: " + wilaya + " - " + (type==="home"?"توصيل للمنزل":"مكتب التوصيل");
+
+    let phone = "213699091938";
+    let url = "https://wa.me/" + phone + "?text=" + message;
+    window.open(url, "_blank");
+}
+
+function openImage(src){
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modal").style.display = "flex";
+}
+function closeImage(){
+    document.getElementById("modal").style.display = "none";
 }
 </script>
 
