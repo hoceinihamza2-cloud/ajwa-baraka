@@ -1,342 +1,203 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عجوة البركة</title><style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
-}
+<title>عجوة البركة</title>
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 15px;
-}
+<style>
+body {font-family: Arial;margin:0;background:#f5f5f5;}
+.container {max-width:1000px;margin:auto;padding:15px;}
+.card {background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1);padding:20px;margin-bottom:20px;}
+.product img {width:100%;height:250px;object-fit:contain;border-radius:10px;cursor:pointer;}
+.title {font-size:22px;font-weight:bold;}
+.price {color:#b88900;font-size:20px;font-weight:bold;}
+.btn {display:block;text-align:center;background:#25D366;color:#fff;padding:12px;border-radius:10px;text-decoration:none;}
+.header {text-align:center;padding:15px;font-size:24px;font-weight:bold;background:#fff;margin-bottom:10px;}
 
-.card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    animation: fadeIn 0.6s ease;
-}
+.whatsapp-float {position:fixed;bottom:20px;left:20px;background:#25D366;color:#fff;padding:12px;border-radius:50px;text-decoration:none;}
 
-@keyframes fadeIn {
-    from {opacity:0; transform: translateY(20px);} 
-    to {opacity:1; transform: translateY(0);} 
-}
+.modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
+.modal img {max-width:90%;max-height:80%;border-radius:10px;}
 
-.product {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+.social-fixed {position:fixed;right:15px;bottom:80px;display:flex;flex-direction:column;gap:10px;}
+.social-fixed a {width:45px;height:45px;display:flex;align-items:center;justify-content:center;border-radius:50%;}
+.facebook {background:#1877F2;}
+.instagram {background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5);}
+.tiktok {background:#000;}
+.youtube {background:#FF0000;}
+.social-fixed img {width:22px;}
 
-.product img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    border-radius: 10px;
-    cursor: pointer;
-}
+select {width:100%;padding:10px;border-radius:10px;margin-top:10px;}
 
-.title {
-    font-size: 22px;
-    font-weight: bold;
-}
+footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
+</style>
 
-.price {
-    color: #b88900;
-    font-size: 20px;
-    font-weight: bold;
-}
+</head>
 
-.btn {
-    display: block;
-    text-align: center;
-    background: #25D366;
-    color: white;
-    padding: 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 18px;
-}
+<body>
 
-.features {
-    line-height: 1.8;
-}
+<div class="header">عجوة البركة</div>
 
-.header {
-    text-align: center;
-    padding: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    background: #fff;
-    margin-bottom: 10px;
-}
+<div class="container">
 
-/* زر واتساب ثابت */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #25D366;
-    color: white;
-    padding: 12px 15px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* نافذة تكبير الصورة */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-}
-
-</style></head><body><div class="header">عجوة البركة</div><div class="container"><div class="card product">
-    <img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" onclick="openImage(this.src)">
-    <div class="title">عجوة المدينة</div>
-    <div class="price">السعر:4000 دج</div>
-    <a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
-    <div class="features">
-        ✔️ منتج أصلي 100%<br>
-        ✔️ غني بالفوائد الصحية<br>
-        ✔️ طعم فاخر وجودة عالية<br>
-        ✔️ توصيل لجميع الولايات
-    </div>
-</div><div class="card product">
-    <img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" onclick="openImage(this.src)">
-    <div class="title">عسل الحبة السوداء</div>
-    <div class="price">السعر: 4500 دج</div>
-    <a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
-    <div class="features">
-        ✔️ طبيعي 100%<br>
-        ✔️ يقوي المناعة<br>
-        ✔️ جودة ممتازة<br>
-        ✔️ الدفع عند الاستلام
-    </div>
-</div><div class="card product">
-    <img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" onclick="openImage(this.src)">
-    <div class="title">ماء زمزم</div>
-    <div class="price">السعر: 4500 دج</div>
-    <a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
-    <div class="features">
-        ✔️ ماء مبارك أصلي<br>
-        ✔️ جودة مضمونة<br>
-        ✔️ توصيل سريع<br>
-        ✔️ متوفر بكميات محدودة
-    </div>
-</div></div><!-- زر واتساب ثابت --><a class="whatsapp-float" href="https://wa.me/213699091938">واتساب</a>
-
-<!-- نافذة الصورة --><div class="modal" id="modal" onclick="closeImage()">
-    <img id="modalImg">
-</div><script>
-function openImage(src) {
-    document.getElementById('modal').style.display = 'flex';
-    document.getElementById('modalImg').src = src;
-}
-
-function closeImage() {
-    document.getElementById('modal').style.display = 'none';
-}
-</script></body>
-</html>
-
-<!-- Delivery Section -->
-<div class="delivery">
-    <h3>اختر الولاية ونوع التوصيل</h3>
-    <select id="wilayaSelect">
-        <option value="">اختر الولاية</option>
-        <option value="Adrar">Adrar</option>
-        <option value="Chlef">Chlef</option>
-        <option value="Laghouat">Laghouat</option>
-        <option value="Oum El Bouaghi">Oum El Bouaghi</option>
-        <option value="Batna">Batna</option>
-        <option value="Béjaïa">Béjaïa</option>
-        <option value="Biskra">Biskra</option>
-        <option value="Béchar">Béchar</option>
-        <option value="Blida">Blida</option>
-        <option value="Bouira">Bouira</option>
-        <option value="Tamanrasset">Tamanrasset</option>
-        <option value="Tébessa">Tébessa</option>
-        <option value="Tlemcen">Tlemcen</option>
-        <option value="Tiaret">Tiaret</option>
-        <option value="Tizi Ouzou">Tizi Ouzou</option>
-        <option value="Alger">Alger</option>
-        <option value="Djelfa">Djelfa</option>
-        <option value="Jijel">Jijel</option>
-        <option value="Sétif">Sétif</option>
-        <option value="Saïda">Saïda</option>
-        <option value="Skikda">Skikda</option>
-        <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
-        <option value="Annaba">Annaba</option>
-        <option value="Guelma">Guelma</option>
-        <option value="Constantine">Constantine</option>
-        <option value="Médéa">Médéa</option>
-        <option value="Mostaganem">Mostaganem</option>
-        <option value="M'Sila">M'Sila</option>
-        <option value="Mascara">Mascara</option>
-        <option value="Ouargla">Ouargla</option>
-        <option value="Oran">Oran</option>
-        <option value="El Bayadh">El Bayadh</option>
-        <option value="Illizi">Illizi</option>
-        <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
-        <option value="Boumerdès">Boumerdès</option>
-        <option value="El Tarf">El Tarf</option>
-        <option value="Tindouf">Tindouf</option>
-        <option value="Tissemsilt">Tissemsilt</option>
-        <option value="El Oued">El Oued</option>
-        <option value="Khenchela">Khenchela</option>
-        <option value="Souk Ahras">Souk Ahras</option>
-        <option value="Tipaza">Tipaza</option>
-        <option value="Mila">Mila</option>
-        <option value="Aïn Defla">Aïn Defla</option>
-        <option value="Naâma">Naâma</option>
-        <option value="Aïn Témouchent">Aïn Témouchent</option>
-        <option value="Ghardaïa">Ghardaïa</option>
-        <option value="Relizane">Relizane</option>
-        <option value="Timimoun">Timimoun</option>
-        <option value="Ouled Djellal">Ouled Djellal</option>
-        <option value="Beni Abbes">Beni Abbes</option>
-        <option value="In Salah">In Salah</option>
-        <option value="In Guezzam">In Guezzam</option>
-        <option value="Touggourt">Touggourt</option>
-        <option value="Djanet">Djanet</option>
-        <option value="El M'Ghair">El M'Ghair</option>
-        <option value="El Meniaa">El Meniaa</option>
-    </select>
-
-    <select id="deliveryType">
-        <option value="">اختر نوع التوصيل</option>
-        <option value="home">المنزل</option>
-        <option value="office">مكتب التوصيل</option>
-    </select>
-
-    <p id="deliveryPrice">سعر التوصيل: -</p>
+<!-- المنتجات -->
+<div class="card product">
+<img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" onclick="openImage(this.src)">
+<div class="title">عجوة المدينة</div>
+<div class="price">السعر: 4000 دج</div>
+<a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
 </div>
 
-<!-- WhatsApp Button -->
-<a href="#" class="whatsapp-btn" id="whatsappBtn">اطلب الآن عبر واتساب</a>
-
-<!-- Social Icons -->
-<div class="social">
-    <img src="facebook.png" alt="Facebook">
-    <img src="instagram.png" alt="Instagram">
-    <img src="tiktok.png" alt="TikTok">
-    <img src="youtube.png" alt="YouTube">
+<div class="card product">
+<img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" onclick="openImage(this.src)">
+<div class="title">عسل الحبة السوداء</div>
+<div class="price">السعر: 4500 دج</div>
+<a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
 </div>
 
-<!-- QR Code -->
-<div class="qr">
-    <img src="qrcode.png" alt="QR Code" width="150">
+<div class="card product">
+<img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" onclick="openImage(this.src)">
+<div class="title">ماء زمزم</div>
+<div class="price">السعر: 4500 دج</div>
+<a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
 </div>
 
-<!-- Footer -->
-<footer>
-    جميع الحقوق محفوظة © 2026
-</footer>
+<!-- التوصيل -->
+<div class="card">
+<h3>اختر الولاية ونوع التوصيل</h3>
+
+<select id="wilaya">
+<option value="">اختر الولاية</option>
+<option>Adrar</option><option>Chlef</option><option>Laghouat</option>
+<option>Oum El Bouaghi</option><option>Batna</option><option>Béjaïa</option>
+<option>Biskra</option><option>Béchar</option><option>Blida</option>
+<option>Bouira</option><option>Tamanrasset</option><option>Tébessa</option>
+<option>Tlemcen</option><option>Tiaret</option><option>Tizi Ouzou</option>
+<option>Alger</option><option>Djelfa</option><option>Jijel</option>
+<option>Sétif</option><option>Saïda</option><option>Skikda</option>
+<option>Sidi Bel Abbès</option><option>Annaba</option><option>Guelma</option>
+<option>Constantine</option><option>Médéa</option><option>Mostaganem</option>
+<option>M'Sila</option><option>Mascara</option><option>Ouargla</option>
+<option>Oran</option><option>El Bayadh</option><option>Illizi</option>
+<option>Bordj Bou Arreridj</option><option>Boumerdès</option>
+<option>El Tarf</option><option>Tindouf</option><option>Tissemsilt</option>
+<option>El Oued</option><option>Khenchela</option><option>Souk Ahras</option>
+<option>Tipaza</option><option>Mila</option><option>Aïn Defla</option>
+<option>Naâma</option><option>Aïn Témouchent</option><option>Ghardaïa</option>
+<option>Relizane</option><option>Timimoun</option><option>Ouled Djellal</option>
+<option>Beni Abbes</option><option>In Salah</option><option>In Guezzam</option>
+<option>Touggourt</option><option>Djanet</option>
+<option>El M'Ghair</option><option>El Meniaa</option>
+</select>
+
+<select id="type">
+<option value="">نوع التوصيل</option>
+<option value="home">🏠 للمنزل</option>
+<option value="office">🏢 للمكتب</option>
+</select>
+
+<p id="price">سعر التوصيل: -</p>
+</div>
+
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/213699091938">واتساب</a>
+
+<div class="modal" id="modal" onclick="closeImage()">
+<img id="modalImg">
+</div>
 
 <script>
-    // Slider
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slides img');
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 3000);
+const prices = {
+"Adrar": {home:1400, office:1100},
+"Chlef": {home:850, office:450},
+"Laghouat": {home:1000, office:700},
+"Oum El Bouaghi": {home:850, office:500},
+"Batna": {home:850, office:500},
+"Béjaïa": {home:850, office:500},
+"Biskra": {home:950, office:600},
+"Béchar": {home:1400, office:1100},
+"Blida": {home:500, office:400},
+"Bouira": {home:850, office:450},
+"Tamanrasset": {home:1800, office:1400},
+"Tébessa": {home:950, office:600},
+"Tlemcen": {home:850, office:500},
+"Tiaret": {home:850, office:500},
+"Tizi Ouzou": {home:850, office:450},
+"Alger": {home:700, office:400},
+"Djelfa": {home:900, office:600},
+"Jijel": {home:850, office:500},
+"Sétif": {home:850, office:450},
+"Saïda": {home:900, office:600},
+"Skikda": {home:850, office:500},
+"Sidi Bel Abbès": {home:850, office:500},
+"Annaba": {home:850, office:500},
+"Guelma": {home:900, office:600},
+"Constantine": {home:850, office:450},
+"Médéa": {home:850, office:450},
+"Mostaganem": {home:850, office:500},
+"M'Sila": {home:850, office:500},
+"Mascara": {home:900, office:600},
+"Ouargla": {home:1100, office:800},
+"Oran": {home:850, office:450},
+"El Bayadh": {home:1100, office:800},
+"Illizi": {home:2000, office:1700},
+"Bordj Bou Arreridj": {home:850, office:450},
+"Boumerdès": {home:850, office:450},
+"El Tarf": {home:950, office:600},
+"Tindouf": {home:1800, office:1400},
+"Tissemsilt": {home:850, office:500},
+"El Oued": {home:1100, office:800},
+"Khenchela": {home:900, office:600},
+"Souk Ahras": {home:900, office:600},
+"Tipaza": {home:700, office:400},
+"Mila": {home:850, office:500},
+"Aïn Defla": {home:850, office:450},
+"Naâma": {home:1100, office:800},
+"Aïn Témouchent": {home:900, office:600},
+"Ghardaïa": {home:1100, office:800},
+"Relizane": {home:850, office:500},
+"Timimoun": {home:1400, office:1100},
+"Ouled Djellal": {home:1000, office:700},
+"Beni Abbes": {home:1400, office:1100},
+"In Salah": {home:1400, office:1100},
+"In Guezzam": {home:2000, office:1700},
+"Touggourt": {home:1100, office:800},
+"Djanet": {home:2000, office:1700},
+"El M'Ghair": {home:1100, office:800},
+"El Meniaa": {home:1300, office:1000}
+};
 
-    // Quantity
-    function increase(btn){
-        let input = btn.previousElementSibling;
-        input.value = parseInt(input.value) + 1;
-    }
+document.getElementById('wilaya').onchange = update;
+document.getElementById('type').onchange = update;
 
-    function decrease(btn){
-        let input = btn.nextElementSibling;
-        if(input.value > 1) input.value = parseInt(input.value) - 1;
-    }
+function update(){
+let w = document.getElementById('wilaya').value;
+let t = document.getElementById('type').value;
 
-    // Delivery Prices
-    const prices = {
-        "Adrar": {home:1400, office:1100}, "Chlef": {home:850, office:450}, "Laghouat": {home:1000, office:700},
-        "Oum El Bouaghi": {home:850, office:500}, "Batna": {home:850, office:500}, "Béjaïa": {home:850, office:500},
-        "Biskra": {home:950, office:600}, "Béchar": {home:1400, office:1100}, "Blida": {home:500, office:400},
-        "Bouira": {home:850, office:450}, "Tamanrasset": {home:1800, office:1400}, "Tébessa": {home:950, office:600},
-        "Tlemcen": {home:850, office:500}, "Tiaret": {home:850, office:500}, "Tizi Ouzou": {home:850, office:450},
-        "Alger": {home:700, office:400}, "Djelfa": {home:900, office:600}, "Jijel": {home:850, office:500},
-        "Sétif": {home:850, office:450}, "Saïda": {home:900, office:600}, "Skikda": {home:850, office:500},
-        "Sidi Bel Abbès": {home:850, office:500}, "Annaba": {home:850, office:500}, "Guelma": {home:900, office:600},
-        "Constantine": {home:850, office:450}, "Médéa": {home:850, office:450}, "Mostaganem": {home:850, office:500},
-        "M'Sila": {home:850, office:500}, "Mascara": {home:900, office:600}, "Ouargla": {home:1100, office:800},
-        "Oran": {home:850, office:450}, "El Bayadh": {home:1100, office:800}, "Illizi": {home:2000, office:1700},
-        "Bordj Bou Arreridj": {home:850, office:450}, "Boumerdès": {home:850, office:450}, "El Tarf": {home:950, office:600},
-        "Tindouf": {home:1800, office:1400}, "Tissemsilt": {home:850, office:500}, "El Oued": {home:1100, office:800},
-        "Khenchela": {home:900, office:600}, "Souk Ahras": {home:900, office:600}, "Tipaza": {home:700, office:400},
-        "Mila": {home:850, office:500}, "Aïn Defla": {home:850, office:450}, "Naâma": {home:1100, office:800},
-        "Aïn Témouchent": {home:900, office:600}, "Ghardaïa": {home:1100, office:800}, "Relizane": {home:850, office:500},
-        "Timimoun": {home:1400, office:1100}, "Ouled Djellal": {home:1000, office:700}, "Beni Abbes": {home:1400, office:1100},
-        "In Salah": {home:1400, office:1100}, "In Guezzam": {home:2000, office:1700}, "Touggourt": {home:1100, office:800},
-        "Djanet": {home:2000, office:1700}, "El M'Ghair": {home:1100, office:800}, "El Meniaa": {home:1300, office:1000}
-    };
-
-    const wilayaSelect = document.getElementById('wilayaSelect');
-    const deliveryType = document.getElementById('deliveryType');
-    const deliveryPrice = document.getElementById('deliveryPrice');
-
-    wilayaSelect.addEventListener('change', updatePrice);
-    deliveryType.addEventListener('change', updatePrice);
-
-    function updatePrice(){
-        const wilaya = wilayaSelect.value;
-        const type = deliveryType.value;
-        if(wilaya && type){
-            deliveryPrice.textContent = "سعر التوصيل: " + prices[wilaya][type] + " DA";
-        } else {
-            deliveryPrice.textContent = "سعر التوصيل: -";
-        }
-    }
+if(prices[w] && t){
+document.getElementById('price').innerText = "سعر التوصيل: " + prices[w][t] + " دج";
+}else{
+document.getElementById('price').innerText = "سعر التوصيل: -";
+}
+}
 </script>
-<!-- باقي الموقع / المنتجات ... -->
 
-<!-- أيقونات احترافية ثابتة -->
 <div class="social-fixed">
-
-  <a href="https://www.facebook.com/share/1BeH3TADsR/" target="_blank" class="facebook">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-  </a>
-
-  <a href="https://www.instagram.com/ajwa_baraka" target="_blank" class="instagram">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-  </a>
-
-  <a href="https://www.tiktok.com/@hamza.store22" target="_blank" class="tiktok">
-    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-  </a>
-
-  <a href="https://www.youtube.com/@alhoceini" target="_blank" class="youtube">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
-  </a>
-
+<a href="https://www.facebook.com/share/1BeH3TADsR/" target="_blank" class="facebook">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+<a href="https://www.instagram.com/ajwa_baraka" target="_blank" class="instagram">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+<a href="https://www.tiktok.com/@hamza.store22" target="_blank" class="tiktok">
+<img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+<a href="https://www.youtube.com/@alhoceini" target="_blank" class="youtube">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
 </div>
+
+<footer>
+جميع الحقوق محفوظة © 2026
+</footer>
 
 </body>
 </html>
