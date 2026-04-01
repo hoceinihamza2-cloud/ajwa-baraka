@@ -21,6 +21,12 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     padding: 20px;
     margin-bottom: 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);} 
+    to {opacity:1; transform: translateY(0);} 
 }
 
 .product {
@@ -34,6 +40,7 @@ body {
     height: 250px;
     object-fit: contain;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .title {
@@ -70,43 +77,87 @@ body {
     background: #fff;
     margin-bottom: 10px;
 }
-</style></head><body><div class="header">عجوة البركة</div><div class="container"><!-- عجوة المدينة --><div class="card product">
-    <img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" alt="عجوة المدينة">
+
+/* زر واتساب ثابت */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* نافذة تكبير الصورة */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+</style></head><body><div class="header">عجوة البركة</div><div class="container"><div class="card product">
+    <img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" onclick="openImage(this.src)">
     <div class="title">عجوة المدينة</div>
-    <div class="price">السعر: 4000 دج</div><a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
-
-<div class="features">
-    ✔️ منتج أصلي 100%<br>
-    ✔️ غني بالفوائد الصحية<br>
-    ✔️ طعم فاخر وجودة عالية<br>
-    ✔️ توصيل لجميع الولايات
-</div>
-
-</div><!-- عسل الحبة السوداء --><div class="card product">
-    <img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" alt="عسل الحبة السوداء">
+    <div class="price">السعر:4000 دج</div>
+    <a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+    <div class="features">
+        ✔️ منتج أصلي 100%<br>
+        ✔️ غني بالفوائد الصحية<br>
+        ✔️ طعم فاخر وجودة عالية<br>
+        ✔️ توصيل لجميع الولايات
+    </div>
+</div><div class="card product">
+    <img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" onclick="openImage(this.src)">
     <div class="title">عسل الحبة السوداء</div>
-    <div class="price">السعر:4500 دج</div><a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
-
-<div class="features">
-    ✔️ طبيعي 100%<br>
-    ✔️ يقوي المناعة<br>
-    ✔️ جودة ممتازة<br>
-    ✔️ الدفع عند الاستلام
-</div>
-
-</div><!-- ماء زمزم --><div class="card product">
-    <img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" alt="ماء زمزم">
+    <div class="price">السعر: 4500 دج</div>
+    <a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+    <div class="features">
+        ✔️ طبيعي 100%<br>
+        ✔️ يقوي المناعة<br>
+        ✔️ جودة ممتازة<br>
+        ✔️ الدفع عند الاستلام
+    </div>
+</div><div class="card product">
+    <img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" onclick="openImage(this.src)">
     <div class="title">ماء زمزم</div>
-    <div class="price">السعر: 4500 دج</div><a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+    <div class="price">السعر: 4500 دج</div>
+    <a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+    <div class="features">
+        ✔️ ماء مبارك أصلي<br>
+        ✔️ جودة مضمونة<br>
+        ✔️ توصيل سريع<br>
+        ✔️ متوفر بكميات محدودة
+    </div>
+</div></div><!-- زر واتساب ثابت --><a class="whatsapp-float" href="https://wa.me/213699091938">واتساب</a>
 
-<div class="features">
-    ✔️ ماء مبارك أصلي<br>
-    ✔️ جودة مضمونة<br>
-    ✔️ توصيل سريع<br>
-    ✔️ متوفر بكميات محدودة
-</div>
+<!-- نافذة الصورة --><div class="modal" id="modal" onclick="closeImage()">
+    <img id="modalImg">
+</div><script>
+function openImage(src) {
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modalImg').src = src;
+}
 
-</div></div></body>
+function closeImage() {
+    document.getElementById('modal').style.display = 'none';
+}
+</script></body>
 </html>
 
 <!-- Delivery Section -->
