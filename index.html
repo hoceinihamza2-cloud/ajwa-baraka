@@ -1,255 +1,113 @@
-<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عجوة المدينة</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f8f8;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عجوة البركة</title><style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
 
-        header {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #eee;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-            color: #333;
-        }
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 1.2em;
-            color: #666;
-        }
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        /* Slider */
-        .slider {
-            position: relative;
-            width: 100%;
-            max-height: 300px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
+.product img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+}
 
-        .slides img {
-            width: 100%;
-            display: none;
-        }
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
 
-        .slides img.active {
-            display: block;
-        }
+.price {
+    color: #b88900;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-        /* Products */
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+.btn {
+    display: block;
+    text-align: center;
+    background: #25D366;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
 
-        .product-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 15px;
-            width: 250px;
-            text-align: center;
-        }
+.features {
+    line-height: 1.8;
+}
 
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
+.header {
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    background: #fff;
+    margin-bottom: 10px;
+}
+</style></head><body><div class="header">عجوة البركة</div><div class="container"><!-- عجوة المدينة --><div class="card product">
+    <img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" alt="عجوة المدينة">
+    <div class="title">عجوة المدينة</div>
+    <div class="price">السعر: ---- دج</div><a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
 
-        .product-card h3 {
-            margin: 10px 0 5px 0;
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        .product-card p {
-            font-size: 0.95em;
-            color: #555;
-        }
-
-        .product-card .price {
-            font-size: 1.1em;
-            color: #2e8b57;
-            margin: 5px 0;
-        }
-
-        .quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .quantity button {
-            width: 30px;
-            height: 30px;
-            border: none;
-            background-color: #2e8b57;
-            color: #fff;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .quantity input {
-            width: 50px;
-            text-align: center;
-            margin: 0 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
-
-        /* Delivery */
-        .delivery {
-            background: #fff;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .delivery select {
-            padding: 10px;
-            font-size: 1em;
-            margin: 5px;
-            border-radius: 5px;
-        }
-
-        .delivery p {
-            font-size: 1.1em;
-            margin-top: 10px;
-            color: #333;
-        }
-
-        /* WhatsApp button */
-        .whatsapp-btn {
-            display: block;
-            width: 250px;
-            margin: 20px auto;
-            background-color: #25D366;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        /* Social Icons */
-        .social {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .social img {
-            width: 40px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-
-        /* QR Code */
-        .qr {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .products {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>عجوة المدينة</h1>
-    <p>منتجات طبيعية أصلية: عجوة المدينة - عسل الحبة السوداء - ماء زمزم</p>
-</header>
-
-<!-- Slider -->
-<div class="slider">
-    <div class="slides">
-        <img src="slide1.jpg" class="active" alt="Slide 1">
-        <img src="slide2.jpg" alt="Slide 2">
-        <img src="slide3.jpg" alt="Slide 3">
-    </div>
+<div class="features">
+    ✔️ منتج أصلي 100%<br>
+    ✔️ غني بالفوائد الصحية<br>
+    ✔️ طعم فاخر وجودة عالية<br>
+    ✔️ توصيل لجميع الولايات
 </div>
 
-<!-- Products Section -->
-<div class="products">
-    <div class="product-card">
-     <a href="https://ibb.co/ZR5VTScP"><img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" alt="file-00000000652471f5a5c33729899eabc0" border="0"></a>  
-        <h3>عجوة المدينة</h3>
-        <p>  
-            ✔️ عجوة المدينة الأصلية 100%
-     ✔️ تمر مبارك بجودة عالية وطعم فاخر 
-     ✔️ مثالية للصحة والطاقة اليومية
-        </p>
-        <div class="price">4000 DA</div>
-        <div class="quantity">
-            <button onclick="decrease(this)">-</button>
-            <input type="number" value="1" min="1">
-            <button onclick="increase(this)">+</button>
-        </div>
-    </div>
+</div><!-- عسل الحبة السوداء --><div class="card product">
+    <img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" alt="عسل الحبة السوداء">
+    <div class="title">عسل الحبة السوداء</div>
+    <div class="price">السعر: ---- دج</div><a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
 
-    <div class="product-card">
-        <a href="https://imgbb.com/"><img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" alt="1Cl QWd XNU7w TDI9jt MDHsglm ZZk OUYHs D6HCh DX2" border="0"></a>
-        <h3>عسل الحبة السوداء</h3>
-        <p>  ✔️ يقوي المناعة وينشط الجسم
-✔️ طعم لذيذ وفوائد عظيمة
-✔️ منتج أصلي بدون إضافات </p>
-        <div class="price">4500 DA</div>
-        <div class="quantity">
-            <button onclick="decrease(this)">-</button>
-            <input type="number" value="1" min="1">
-            <button onclick="increase(this)">+</button>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <a href="https://ibb.co/BHMJ6zTT"><img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" alt="20260310-165800" border="0"></a>
-        <h3>ماء زمزم</h3>
-        <p> ✔️ ماء زمزم المبارك
-✔️ نقي وطاهر من أطهر بقاع الأرض
-✔️ للشرب والاستشفاء بإذن الله </p>
-        <div class="price">4500 DA</div>
-        <div class="quantity">
-            <button onclick="decrease(this)">-</button>
-            <input type="number" value="1" min="1">
-            <button onclick="increase(this)">+</button>
-        </div>
-    </div>
+<div class="features">
+    ✔️ طبيعي 100%<br>
+    ✔️ يقوي المناعة<br>
+    ✔️ جودة ممتازة<br>
+    ✔️ الدفع عند الاستلام
 </div>
+
+</div><!-- ماء زمزم --><div class="card product">
+    <img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" alt="ماء زمزم">
+    <div class="title">ماء زمزم</div>
+    <div class="price">السعر: ---- دج</div><a class="btn" href="https://wa.me/213699091938">اطلب الآن عبر واتساب</a>
+
+<div class="features">
+    ✔️ ماء مبارك أصلي<br>
+    ✔️ جودة مضمونة<br>
+    ✔️ توصيل سريع<br>
+    ✔️ متوفر بكميات محدودة
+</div>
+
+</div></div></body>
+</html>
 
 <!-- Delivery Section -->
 <div class="delivery">
