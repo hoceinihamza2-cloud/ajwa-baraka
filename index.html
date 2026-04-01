@@ -6,29 +6,30 @@
 <title>عجوة البركة</title>
 
 <style>
-body {font-family: Arial;margin:0;background:#f5f5f5;}
-.container {max-width:1000px;margin:auto;padding:15px;}
-.card {background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1);padding:20px;margin-bottom:20px;}
-.product img {width:100%;height:250px;object-fit:contain;border-radius:10px;cursor:pointer;}
-.title {font-size:22px;font-weight:bold;margin-bottom:5px;}
-.price {color:#b88900;font-size:20px;font-weight:bold;margin-bottom:10px;}
-.btn {display:block;text-align:center;background:#25D366;color:#fff;padding:12px;border-radius:10px;text-decoration:none;margin-top:10px;cursor:pointer;}
-.header {text-align:center;padding:15px;font-size:24px;font-weight:bold;background:#fff;margin-bottom:10px;}
-input[type=number], input[type=text], select {width:100%;padding:10px;border-radius:10px;margin-top:5px;margin-bottom:10px;box-sizing:border-box;}
-footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
-.whatsapp-float {position:fixed;bottom:20px;left:20px;background:#25D366;color:#fff;padding:12px;border-radius:50px;text-decoration:none;}
-.modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
-.modal img {max-width:90%;max-height:80%;border-radius:10px;}
-.social-fixed {position:fixed;right:15px;bottom:80px;display:flex;flex-direction:column;gap:10px;}
-.social-fixed a {width:45px;height:45px;display:flex;align-items:center;justify-content:center;border-radius:50%;}
+body {font-family: Arial, sans-serif; margin:0; background:#f5f5f5;}
+.container {max-width:1000px; margin:auto; padding:15px;}
+.card {background:#fff; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); padding:20px; margin-bottom:20px;}
+.product img {width:100%; height:250px; object-fit:contain; border-radius:10px; cursor:pointer;}
+.title {font-size:22px; font-weight:bold; margin-top:10px;}
+.price {color:#b88900; font-size:20px; font-weight:bold; margin-top:5px;}
+input[type="number"] {width:60px; padding:5px; margin:5px 0;}
+.select-wrapper {margin-top:10px;}
+.btn-order {display:block; width:100%; text-align:center; background:#25D366; color:#fff; padding:15px; border-radius:10px; text-decoration:none; font-size:18px; font-weight:bold; margin-top:15px;}
+.header {text-align:center; padding:15px; font-size:24px; font-weight:bold; background:#fff; margin-bottom:10px;}
+.whatsapp-float {position:fixed; bottom:20px; left:20px; background:#25D366; color:#fff; padding:12px; border-radius:50%; text-decoration:none; display:flex; align-items:center; justify-content:center;}
+.modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;}
+.modal img {max-width:90%; max-height:80%; border-radius:10px;}
+.social-fixed {position:fixed; right:15px; bottom:80px; display:flex; flex-direction:column; gap:10px;}
+.social-fixed a {width:45px; height:45px; display:flex; align-items:center; justify-content:center; border-radius:50%;}
 .facebook {background:#1877F2;}
 .instagram {background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5);}
 .tiktok {background:#000;}
 .youtube {background:#FF0000;}
 .social-fixed img {width:22px;}
+footer {text-align:center; padding:15px; background:#fff; margin-top:20px;}
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="header">عجوة البركة</div>
@@ -40,32 +41,29 @@ footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 <img src="https://i.ibb.co/hxby8c2j/file-00000000652471f5a5c33729899eabc0.png" onclick="openImage(this.src)">
 <div class="title">عجوة المدينة</div>
 <div class="price">السعر: 4000 دج</div>
-<input type="number" min="0" value="0" id="q1" placeholder="الكمية">
+<label>الكمية: <input type="number" min="0" value="0" id="q1"></label>
 </div>
 
 <div class="card product">
 <img src="https://i.ibb.co/TBm3bhH3/1-Cl-QWd-XNU7w-TDI9jt-MDHsglm-ZZk-OUYHs-D6-HCh-DX2.jpg" onclick="openImage(this.src)">
 <div class="title">عسل الحبة السوداء</div>
 <div class="price">السعر: 4500 دج</div>
-<input type="number" min="0" value="0" id="q2" placeholder="الكمية">
+<label>الكمية: <input type="number" min="0" value="0" id="q2"></label>
 </div>
 
 <div class="card product">
 <img src="https://i.ibb.co/1YWNXvRR/20260310-165800.jpg" onclick="openImage(this.src)">
 <div class="title">ماء زمزم</div>
 <div class="price">السعر: 4500 دج</div>
-<input type="number" min="0" value="0" id="q3" placeholder="الكمية">
+<label>الكمية: <input type="number" min="0" value="0" id="q3"></label>
 </div>
 
-<!-- رقم هاتف الزبون -->
+<!-- التوصيل ورقم الهاتف -->
 <div class="card">
-<h3>رقم هاتفك</h3>
-<input type="text" id="phone" placeholder="اكتب رقمك">
-</div>
+<h3>اختر الولاية ونوع التوصيل وأدخل رقم هاتفك</h3>
 
-<!-- التوصيل -->
-<div class="card">
-<h3>اختر الولاية ونوع التوصيل</h3>
+<input type="text" id="phone" placeholder="رقم الهاتف">
+<div class="select-wrapper">
 <select id="wilaya">
 <option value="">اختر الولاية</option>
 <option>Adrar</option><option>Chlef</option><option>Laghouat</option>
@@ -96,14 +94,13 @@ footer {text-align:center;padding:15px;background:#fff;margin-top:20px;}
 </select>
 
 <p id="price">سعر التوصيل: -</p>
+
+<a class="btn-order" href="#" onclick="sendOrder()">أطلب الآن عبر واتساب</a>
 </div>
 
-<!-- زر إرسال الطلبية -->
-<button class="btn" onclick="sendOrder()">اطلب الآن عبر واتساب</button>
-
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/213699091938">واتساب</a>
+<a class="whatsapp-float" href="https://wa.me/213699091938">📞</a>
 
 <div class="modal" id="modal" onclick="closeImage()">
 <img id="modalImg">
@@ -136,50 +133,46 @@ document.getElementById('wilaya').onchange = update;
 document.getElementById('type').onchange = update;
 
 function update(){
-    let w = document.getElementById('wilaya').value;
-    let t = document.getElementById('type').value;
-
-    if(prices[w] && t){
-        document.getElementById('price').innerText = "سعر التوصيل: " + prices[w][t] + " دج";
-    }else{
-        document.getElementById('price').innerText = "سعر التوصيل: -";
-    }
+let w = document.getElementById('wilaya').value;
+let t = document.getElementById('type').value;
+if(prices[w] && t){
+document.getElementById('price').innerText = "سعر التوصيل: " + prices[w][t] + " دج";
+}else{
+document.getElementById('price').innerText = "سعر التوصيل: -";
+}
 }
 
-// إرسال الطلبية إلى واتساب
 function sendOrder(){
-    let q1 = document.getElementById("q1").value;
-    let q2 = document.getElementById("q2").value;
-    let q3 = document.getElementById("q3").value;
+let q1 = document.getElementById("q1").value;
+let q2 = document.getElementById("q2").value;
+let q3 = document.getElementById("q3").value;
+let phoneClient = document.getElementById("phone").value;
+let wilaya = document.getElementById("wilaya").value;
+let type = document.getElementById("type").value;
+let message = "";
 
-    let phoneClient = document.getElementById("phone").value;
-    let wilaya = document.getElementById("wilaya").value;
-    let type = document.getElementById("type").value;
+if(q1>0){message += q1 + " عجوة المدينة%0A";}
+if(q2>0){message += q2 + " عسل الحبة السوداء%0A";}
+if(q3>0){message += q3 + " ماء زمزم%0A";}
 
-    let message = "";
+if(message === ""){alert("اختر المنتجات"); return;}
+if(phoneClient === ""){alert("اكتب رقم الهاتف"); return;}
+if(wilaya === "" || type === ""){alert("اختر الولاية ونوع التوصيل"); return;}
 
-    if(q1 > 0) message += q1 + " عجوة المدينة%0A";
-    if(q2 > 0) message += q2 + " عسل الحبة السوداء%0A";
-    if(q3 > 0) message += q3 + " ماء زمزم%0A";
+message += "%0Aرقم الهاتف: " + phoneClient + "%0A";
+message += "العنوان: " + wilaya + " - " + (type==="home" ? "توصيل للمنزل" : "مكتب التوصيل");
 
-    if(message === "") { alert("اختر المنتجات"); return; }
-    if(phoneClient === "") { alert("اكتب رقم الهاتف"); return; }
-    if(wilaya === "" || type === "") { alert("اختر الولاية ونوع التوصيل"); return; }
-
-    message += "%0Aرقم الهاتف: " + phoneClient + "%0A";
-    message += "العنوان: " + wilaya + " - " + (type==="home"?"توصيل للمنزل":"مكتب التوصيل");
-
-    let phone = "213699091938";
-    let url = "https://wa.me/" + phone + "?text=" + message;
-    window.open(url, "_blank");
+let phone = "213699091938";
+let url = "https://wa.me/" + phone + "?text=" + message;
+window.open(url, "_blank");
 }
 
 function openImage(src){
-    document.getElementById("modalImg").src = src;
-    document.getElementById("modal").style.display = "flex";
+document.getElementById("modalImg").src = src;
+document.getElementById("modal").style.display = "flex";
 }
 function closeImage(){
-    document.getElementById("modal").style.display = "none";
+document.getElementById("modal").style.display = "none";
 }
 </script>
 
