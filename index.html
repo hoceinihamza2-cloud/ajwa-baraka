@@ -160,13 +160,12 @@ margin-top:20px;
 <option>Djanet</option><option>El M'Ghair</option><option>El Meniaa</option>
 </select>
 
-<select id="type">
+<select id="type" onchange="showPrice()">
 <option value="">نوع التوصيل</option>
 <option value="home">🏠 للمنزل</option>
 <option value="office">🏢 للمكتب</option>
 </select>
 
-<button id="showPricesBtn" class="btn-order">عرض سعر التوصيل</button>
 <p id="deliveryPrices" style="text-align:center;">سعر التوصيل: -</p>
 
 </div>
@@ -221,9 +220,17 @@ alert("اختر الولاية ونوع التوصيل");
 return;
 }
 
+function showPrice(){
+let w = document.getElementById('wilaya').value;
+let t = document.getElementById('type').value;
+
+if(!w || !t) return;
+
+let price = prices[w][t];
+
 document.getElementById('deliveryPrices').innerText =
-"سعر المنزل: " + prices[w].home + " دج | سعر المكتب: " + prices[w].office + " دج";
-};
+"سعر التوصيل: " + price + " دج";
+}
 
 function openImage(src){
 document.getElementById('modal').style.display="flex";
